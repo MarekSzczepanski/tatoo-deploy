@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Anton|Lato:700|Roboto:700|Kaushan+Script|Vidaloka|Cardo:700|Zhi+Mang+Xing&display=swap");
+
+.fa-bars,
+.fa-times {
+  position: fixed;
+  top: 0.3rem;
+  font-size: 1.4rem;
+  color: white;
+  z-index: 2;
+}
+.fa-bars {
+  left: 0.5rem;
+}
+.fa-times {
+  display: none;
+  right: 0.5rem;
+}
+.menu {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+.menuBurger {
+  display: block;
+  position: fixed;
+  top: 0;
+  padding: 0 0.3rem 0.7rem;
+  border-right: solid 1px white;
+  border-bottom: solid 1px white;
+  text-align: center;
+  background-color: black;
+}
+.menuItem {
+  margin: 0.5rem 1rem 0 0.5rem;
+  font-family: "Cardo", serif;
+  letter-spacing: 0.1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.scroll {
+  position: fixed;
+  left: 50vw;
+  bottom: 2vh;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .fa-bars {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+  .menuItem:hover {
+    color: #fefb90;
+  }
+}
+@media (min-width: 1500px) {
+  .scroll {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1600px) {
+  .menuItem {
+    font-size: 1.3rem;
+  }
+}

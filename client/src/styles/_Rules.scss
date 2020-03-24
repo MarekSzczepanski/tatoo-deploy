@@ -1,0 +1,151 @@
+.rulesSection {
+  background-color: #000;
+}
+.rulesWrap {
+  display: flex;
+  justify-content: space-around;
+  min-height: 100vh;
+  padding: 5rem 0;
+}
+.rule {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: solid 2px white;
+  border-radius: 40px;
+  background-color: black;
+  color: white;
+  -webkit-box-shadow: 0px 41px 68px -41px rgba(255, 255, 255, 0);
+  -moz-box-shadow: 0px 41px 68px -41px rgba(255, 255, 255, 0);
+  box-shadow: 0px 41px 68px -41px rgba(255, 255, 255, 0);
+}
+#rule1 {
+  border-color: $gentleRed;
+  color: $gentleRed;
+  -webkit-box-shadow: 0px 41px 68px -41px rgba(254, 96, 96, 0);
+  -moz-box-shadow: 0px 41px 68px -41px rgba(254, 96, 96, 0);
+  box-shadow: 0px 41px 68px -41px rgba(254, 96, 96, 0);
+}
+#rule2 {
+  border-color: #ebe000;
+  color: #ebe000;
+  -webkit-box-shadow: 0px 41px 68px -41px rgba(235, 224, 0, 0);
+  -moz-box-shadow: 0px 41px 68px -41px rgba(235, 224, 0, 0);
+  box-shadow: 0px 41px 68px -41px rgba(235, 224, 0, 0);
+}
+#rule3 {
+  border-color: $mint;
+  color: $mint;
+  -webkit-box-shadow: 0px 41px 68px -41px rgba(51, 195, 108, 0);
+  -moz-box-shadow: 0px 41px 68px -41px rgba(51, 195, 108, 0);
+  box-shadow: 0px 41px 68px -41px rgba(51, 195, 108, 0);
+}
+@media (min-width: 320px) {
+  .rulesWrap {
+    flex-direction: column;
+    align-items: center;
+    padding: 9rem 0;
+  }
+  .rule {
+    width: 13rem;
+    height: 16rem;
+    margin-bottom: 3rem;
+    padding: 0.7rem 1rem 0;
+  }
+  .ruleIcon {
+    font-size: 3rem;
+  }
+  .ruleH3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+  }
+  .ruleText {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+@media (min-width: 400px) {
+  .rule {
+    width: 14rem;
+    height: 19rem;
+  }
+  .ruleIcon {
+    font-size: 4rem;
+  }
+  .ruleH3 {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 700px) {
+  .rule {
+    width: 16rem;
+    height: 22rem;
+  }
+  .ruleIcon {
+    font-size: 5rem;
+  }
+  .ruleH3 {
+    font-size: 1.5rem;
+  }
+  .ruleText {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 900px) {
+  .rulesWrap {
+    flex-direction: row;
+  }
+  .rule {
+    width: 12.5rem;
+    height: 28rem;
+    margin-bottom: 0;
+    padding: 1rem 1rem 0;
+  }
+  .ruleIcon {
+    font-size: 5.5rem;
+  }
+  .ruleH3 {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+  }
+  .ruleText {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+@media (min-width: 1024px) {
+  .rule {
+    width: 20vw;
+  }
+}
+@media (min-width: 1300px) {
+  .rule {
+    width: 18vw;
+  }
+}
+@media (min-width: 1500px) {
+  .rule {
+    width: 17vw;
+  }
+}
+@media (min-width: 1700px) {
+  .rule {
+    height: 33rem;
+  }
+  .ruleIcon {
+    font-size: 7rem;
+  }
+  .ruleH3 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+  .ruleText {
+    font-size: 1.2rem;
+    letter-spacing: 0.1;
+  }
+}

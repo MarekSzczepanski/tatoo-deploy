@@ -1,0 +1,66 @@
+.popupRootImages {
+  display: none;
+}
+.imageUploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.uploadH1 {
+  text-align: center;
+  color: #108121;
+  letter-spacing: 0.2rem;
+}
+.uploadForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.uploadFormInsideWrap {
+  display: flex;
+}
+.uploadInput,
+.uploadBrowseLabel {
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  letter-spacing: 0.1rem;
+  background-color: #4e9b45;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.uploadBrowseLabel {
+  height: auto;
+  background-color: royalblue;
+}
+.uploadInput:hover,
+.uploadBrowseLabel:hover {
+  color: yellow;
+  cursor: pointer;
+}
+.uploadBrowseInput {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.fileName {
+  display: none;
+}
+.deleteImageH1 {
+  margin-top: 3rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  color: #c81529;
+}
+@media (min-width: 1600px) {
+  .uploadInput,
+  .uploadBrowseLabel {
+    font-size: 1.3rem;
+    padding: 1rem 4rem;
+  }
+}

@@ -1,0 +1,27 @@
+@mixin center($top, $left, $translateX, $translateY) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($translateX, $translateY);
+}
+
+@mixin shineAnimation($duration) {
+  animation: move $duration;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  -webkit-animation: move $duration;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: 1s;
+  -moz-transform: skew(-10deg, 0deg);
+  -moz-animation: move $duration;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-delay: 1s;
+  -ms-transform: skew(-10deg, 0deg);
+  -ms-animation: move $duration;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-delay: 1s;
+  -o-transform: skew(-10deg, 0deg);
+  -o-animation: move $duration;
+  -o-animation-iteration-count: infinite;
+  -o-animation-delay: 1s;
+}

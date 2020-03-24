@@ -1,0 +1,235 @@
+.newsMainWrap {
+  display: flex;
+  background-color: $darkYellow;
+  padding-bottom: 1rem;
+}
+.newsSection {
+  width: 98vw;
+  margin-left: 1vw;
+  padding-bottom: 1rem;
+  background-color: $darkYellow;
+}
+.newsH2 {
+  margin: 0 auto;
+  max-width: 95vw;
+  font-family: "Cardo", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: $darkGentleRed;
+}
+.newsWrap {
+  margin: 0 auto;
+  background-color: $darkYellow;
+  border-radius: 40px;
+}
+.homeNewsWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 1rem;
+  word-wrap: break-word;
+  border-radius: 40px;
+  transform-origin: top;
+}
+.homeNewsTitle {
+  display: flex;
+  width: 100%;
+  background-color: $darkGentleRed;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 40px 40px 0 0;
+}
+.homeNewsTitleTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid $darkYellow;
+  color: $newsYellow;
+}
+.homeNewsTitleDate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding: 1rem 0;
+  color: $newsYellow;
+}
+.homeNewsText {
+  background-color: $newsYellow;
+  border-top: none;
+  border-radius: 0 0 40px 40px;
+}
+.homeNewsTextText {
+  padding: 1rem;
+  color: #ea5757;
+}
+.newsSideLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1px;
+  height: 100%;
+  margin-left: 2.5vw;
+  background-color: #e7e149;
+  position: relative;
+}
+.newsSideLineText {
+  padding: 0 1px;
+  transform: rotate(270deg);
+  font-family: "Anton", cursive;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  color: $darkGentleRed;
+  background-color: $darkYellow;
+}
+.newsSideLineLock {
+  width: 100vw;
+  height: 1px;
+  background-color: #e7e149;
+  align-self: center;
+  position: absolute;
+  bottom: 0;
+  left: -2.5vw;
+}
+@media (min-width: 320px) {
+  .newsH2 {
+    padding-top: 1.5rem;
+  }
+  .newsWrap {
+    width: 97%;
+    padding: 1rem 0;
+  }
+  .homeNewsWrap {
+    width: 90vw;
+  }
+  .homeNewsTitle {
+    word-break: break-word;
+  }
+  .homeNewsTitleTitle {
+    width: 70%;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  .homeNewsTitleDate {
+    width: 30%;
+    padding: 0 0.2rem;
+    font-size: 0.8rem;
+  }
+  .homeNewsText {
+    border: solid 1px $darkGentleRed;
+    border-top: none;
+  }
+  .newsSideLineText {
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 800px) {
+  .newsH2 {
+    font-size: 2.8rem;
+    letter-spacing: 0.2rem;
+  }
+  .newsWrap {
+    width: 80%;
+  }
+  .homeNewsWrap {
+    max-width: 75%;
+  }
+  .homeNewsTitleTitle {
+    width: 80%;
+  }
+  .homeNewsTitleDate {
+    width: 20%;
+  }
+  .homeNewsText {
+    border: solid 2px $darkGentleRed;
+    border-top: none;
+  }
+  .newsSideLineText {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1000px) {
+  .newsH2 {
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  .newsWrap {
+    width: 90vw;
+  }
+  .homeNewsWrap {
+    max-width: 85vw;
+  }
+  .homeNewsTitleTitle {
+    width: 85%;
+  }
+  .homeNewsTitleDate {
+    width: 15%;
+  }
+}
+@media (min-width: 1024px) {
+  .newsMainWrap {
+    border-bottom: solid 2rem $darkYellow;
+  }
+}
+@media (min-width: 1301px) {
+  .newsH2 {
+    padding-top: 3rem;
+    transform: translateX(300vw);
+  }
+  .homeNewsWrap {
+    transform: scale(0);
+  }
+  .homeNewsTitleTitle {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  .homeNewsTitleDate,
+  .homeNewsTextText {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1500px) {
+  .newsH2 {
+    font-size: 3.5rem;
+  }
+  .newsH2 {
+    padding-top: 3.5rem;
+  }
+  .homeNewsTitleTitle {
+    font-size: 1.4rem;
+  }
+  .homeNewsTitleDate,
+  .homeNewsTextText {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1700px) {
+  .newsH2 {
+    font-size: 4rem;
+  }
+  .homeNewsTitleTitle {
+    font-size: 1.5rem;
+  }
+  .homeNewsTitleDate,
+  .homeNewsTextText {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1900px) {
+  .newsH2 {
+    font-size: 5rem;
+  }
+  .homeNewsTitleTitle {
+    font-size: 1.6rem;
+  }
+  .homeNewsTitleDate,
+  .homeNewsTextText {
+    font-size: 1.5rem;
+  }
+  .newsSideLineText {
+    font-size: 1.1rem;
+  }
+}

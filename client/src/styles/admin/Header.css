@@ -1,0 +1,45 @@
+.adminHeader {
+  width: 100%;
+  background: #888;
+  border-bottom: 2px solid black;
+}
+.adminHeaderH1 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+
+@media (min-width: 320px) {
+  .adminHeader {
+    height: 8rem;
+    line-height: 4rem;
+  }
+  .adminHeaderH1 {
+    font-size: 1.9rem;
+  }
+}
+@media (min-width: 440px) {
+  .adminHeaderH1 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 550px) {
+  .adminHeaderH1 {
+    font-size: 3.3rem;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+  }
+}
+@media (min-width: 725px) {
+  .adminHeader {
+    line-height: 8rem;
+  }
+  .adminHeaderH1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1655px) {
+  .adminHeaderH1 {
+    font-size: 4rem;
+  }
+}
