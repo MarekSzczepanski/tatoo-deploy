@@ -18,7 +18,7 @@ class DeleteNews extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/delete_news/update")
+      .get("/api/delete_news/update")
       .then(response => {
         this.setState({
           newsList: response.data
@@ -54,7 +54,7 @@ class DeleteNews extends React.Component {
     const boundUpdateNewsList = this.updateNewsList.bind(this);
     const boundNewsListUpdated = this.newsListUpdated.bind(this);
     axios
-      .get("http://localhost:5000/api/delete_news/update")
+      .get("/api/delete_news/update")
       .then(response => {
         console.log("state", this.state.newsList.length);
         console.log("resp", response.data.length);
@@ -95,7 +95,7 @@ class DeleteNews extends React.Component {
   }
   deleteConfirmClick = (isDeleteConfirmed, news) => {
     if (isDeleteConfirmed.classList.contains("delete")) {
-      axios.post("http://localhost:5000/api/delete_news/" + news.id);
+      axios.post("/api/delete_news/" + news.id);
     }
     this.setState({
       newsUpdate: true,

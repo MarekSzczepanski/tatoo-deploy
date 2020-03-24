@@ -15,15 +15,11 @@ const UploadFile = () => {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const res = await axios.post(
-        "http://localhost:5000/add_image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
+      const res = await axios.post("/add_image", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
         }
-      );
+      });
       const { fileName, filePath } = res.data;
 
       setUploadedFile({ fileName, filePath });

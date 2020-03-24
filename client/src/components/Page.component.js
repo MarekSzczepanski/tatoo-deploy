@@ -15,13 +15,11 @@ class Page extends React.Component {
     auth: true
   };
   componentWillMount() {
-    axios
-      .get("http://localhost:5000/api/admin_dashboard/auth")
-      .then(response => {
-        this.setState({
-          auth: response.data.auth
-        });
+    axios.get("/api/admin_dashboard/auth").then(response => {
+      this.setState({
+        auth: response.data.auth
       });
+    });
   }
   render() {
     return (

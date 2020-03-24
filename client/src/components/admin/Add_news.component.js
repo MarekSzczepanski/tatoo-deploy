@@ -47,7 +47,7 @@ class AddNews extends React.Component {
     }
     if (!isWordTooLong && !isEmptySpace) {
       axios
-        .post("http://localhost:5000/api/add_news/add", news)
+        .post("/api/add_news/add", news)
         .then(response => {
           if (response.data) {
             isNewsAddedFlag = true;

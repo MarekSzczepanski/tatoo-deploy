@@ -9,7 +9,7 @@ class News extends React.Component {
     newsList: []
   };
   componentWillMount() {
-    axios.post("http://localhost:5000/api/admin_dashboard/auth", {
+    axios.post("/api/admin_dashboard/auth", {
       auth: false
     });
   }
@@ -33,7 +33,7 @@ class News extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/news_list")
+      .get("/api/news_list")
       .then(response => {
         this.resp = response.data;
         console.log(this.resp);

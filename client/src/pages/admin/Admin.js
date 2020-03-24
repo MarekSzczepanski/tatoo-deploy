@@ -12,7 +12,7 @@ class Admin extends React.Component {
     imagesList: []
   };
   componentWillMount() {
-    axios.post("http://localhost:5000/api/admin_dashboard/auth", {
+    axios.post("/api/admin_dashboard/auth", {
       auth: true
     });
   }
@@ -40,11 +40,11 @@ class Admin extends React.Component {
       password: this.state.password
     };
     axios
-      .post("http://localhost:5000/api/admin/login", user)
+      .post("/api/admin/login", user)
       .then(function(response) {
         if (response.data === "ok") {
           axios
-            .post("http://localhost:5000/api/admin_dashboard/auth", {
+            .post("/api/admin_dashboard/auth", {
               auth: true
             })
             .then(() => {
