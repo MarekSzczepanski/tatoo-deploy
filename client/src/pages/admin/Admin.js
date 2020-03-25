@@ -43,9 +43,12 @@ class Admin extends React.Component {
       .post("/api/admin/login", user)
       .then(function(response) {
         if (response.data === "ok") {
-          axios.post("/api/admin_dashboard/auth", {
-            auth: true
-          });
+          axios.post(
+            "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
+            {
+              auth: true
+            }
+          );
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */
