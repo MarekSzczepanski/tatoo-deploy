@@ -23,6 +23,8 @@ class Page extends React.Component {
       console.log("get", response.data);
       console.log(this.state.auth);
     }); */
+  }
+  componentDidUpdate() {
     axios.get("/api/admin/auth").then(response => {
       console.log("get", response.data);
       this.setState({
