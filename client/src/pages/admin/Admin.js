@@ -62,7 +62,7 @@ class Admin extends React.Component {
           fetch("/auth", {
             method: "POST",
             body: JSON.stringify({
-              auth: "aaa"
+              auth: true
             }),
             headers: { "Content-Type": "application/json" }
           })
