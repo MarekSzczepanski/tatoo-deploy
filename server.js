@@ -32,6 +32,14 @@ app.use(function(req, res, next) {
 app.use(express.json());
 app.use(fileUpload());
 
+let auth;
+
+app.post("/auth", (req, res) => {
+  auth = req.body;
+});
+app.get("/auth", (req, res) => {
+  res.json(auth);
+});
 // Upload Endpoint
 
 app.post("/add_image", (req, res) => {

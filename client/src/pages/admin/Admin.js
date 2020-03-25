@@ -42,32 +42,37 @@ class Admin extends React.Component {
     };
     axios
       .post("/api/admin/login", user)
-      .then(function(response) {
+      .then(async function(response) {
         if (response.data === "ok") {
-          /* axios.post(
-            "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
-            {
-              auth: true
-            }
-          ); */
+          try {
+            await axios.post(
+              "/auth",
+              { auth: true },
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data"
+                }
+              }
+            );
+          } catch (err) {}
+          /* axios.post("/auth", {
+            auth: true
+          }); */
 
-          fetch(
-            "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
-            {
-              method: "POST",
-              body: JSON.stringify({
-                auth: "aaa"
-              }),
-              headers: { "Content-Type": "application/json" }
-            }
-          )
+          /*  fetch("/api/admin_dashboard/auth", {
+            method: "POST",
+            body: JSON.stringify({
+              auth: "aaa"
+            }),
+            headers: { "Content-Type": "application/json" }
+          })
             .then(function(response) {
               return response.json();
             })
             .then(function(body) {
               console.log(body);
               alert("o");
-            });
+            }); */
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */
