@@ -33,7 +33,7 @@ class Admin extends React.Component {
     });
   };
   a = response => {
-    if (this.state.b) {
+    if (response) {
       axios.post("/api/admin_dashboard/auth", {
         auth: true
       });
@@ -49,8 +49,7 @@ class Admin extends React.Component {
     }
   };
   handleSubmit = e => {
-    const st = this.bind(this);
-    console.log(st);
+    const st = this.a.bind(this);
     if (e) {
       e.preventDefault();
     }
@@ -61,9 +60,7 @@ class Admin extends React.Component {
     axios
       .post("/api/admin/login", user)
       .then(function(response) {
-        st.setState({
-          b: true
-        });
+        st("ok");
       })
       .catch(function(error) {
         window.location = "/#/admin";
