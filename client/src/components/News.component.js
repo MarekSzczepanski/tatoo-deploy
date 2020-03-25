@@ -8,11 +8,6 @@ class News extends React.Component {
   state = {
     newsList: []
   };
-  componentWillMount() {
-    axios.post("/api/admin_dashboard/auth", {
-      auth: false
-    });
-  }
   showNewsByScrolling = () => {
     const heading = document.querySelector(".newsH2");
     const news = document.querySelectorAll(".homeNewsWrap");

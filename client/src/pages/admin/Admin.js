@@ -44,13 +44,12 @@ class Admin extends React.Component {
       .then(function(response) {
         console.log(response.data);
         if (response.data === "ok") {
-          axios
-            .post("/api/admin_dashboard/auth", {
-              auth: true
-            })
-            .then(() => {
+          axios.post("/api/admin_dashboard/auth", {
+            auth: true
+          });
+          /* .then(() => {
               window.location = "/#/admin_dashboard";
-            });
+            }); */
           window.location = "/#/admin_dashboard";
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");

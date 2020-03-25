@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import gsap from "gsap";
 import { TweenLite } from "gsap";
 import Header from "../components/Header.component";
@@ -15,6 +16,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 class Home extends React.Component {
+  componentWillMount() {
+    axios.post("/api/admin_dashboard/auth", {
+      auth: false
+    });
+  }
   scrollToSection = e => {
     document
       .querySelector("." + e.target.id.slice(4).toLowerCase() + "Section")
