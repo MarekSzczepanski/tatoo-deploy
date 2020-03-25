@@ -2,15 +2,16 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Page from "./components/Page.component";
 import "./styles/App.css";
+import { HashRouter } from "react-router-dom";
 
 class App extends React.Component {
   render() {
     return (
-      <Router>
+      <HashRouter>
         <div className="app">
           <Page />
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
