@@ -21,7 +21,11 @@ router.route("/login").post((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 router.route("/auth").get((req, res) => {
-  res.json("lalala");
+  if (auth === true) {
+    res.json(auth);
+  } else {
+    res.json("heh");
+  }
 });
 
 module.exports = router;
