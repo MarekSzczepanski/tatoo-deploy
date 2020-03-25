@@ -9,8 +9,7 @@ class Admin extends React.Component {
     username: "",
     password: "",
     isErrorHidden: false,
-    imagesList: [],
-    b: false
+    imagesList: []
   };
   componentWillMount() {
     axios.post("/api/admin_dashboard/auth", {
@@ -18,9 +17,6 @@ class Admin extends React.Component {
     });
   }
   componentDidUpdate() {
-    if (this.state.b) {
-      this.a("ok");
-    }
     if (this.state.isErrorHidden) {
       document.getElementById("popupRoot").classList.add("popupHidden");
     }
@@ -62,9 +58,7 @@ class Admin extends React.Component {
     axios
       .post("/api/admin/login", user)
       .then(function(response) {
-        this.setState({
-          b: true
-        });
+        this.a(response);
       })
       .catch(function(error) {
         window.location = "/#/admin";
