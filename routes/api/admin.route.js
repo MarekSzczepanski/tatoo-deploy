@@ -20,7 +20,7 @@ router.route("/login").post((req, res) => {
     })
     .catch(err => res.status(400).json("Error: " + err));
 });
-app.get("/auth", (req, res) => {
+router.route("/auth").get((req, res) => {
   res.json(auth);
 });
 
