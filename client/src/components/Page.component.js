@@ -12,7 +12,7 @@ import ErrorPage from "../pages/Error_page";
 
 class Page extends React.Component {
   state = {
-    auth: true
+    auth: false
   };
   componentWillMount() {
     axios.get("/api/admin_dashboard/auth").then(response => {
