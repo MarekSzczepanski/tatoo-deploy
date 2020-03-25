@@ -43,9 +43,9 @@ class Admin extends React.Component {
       .post("/api/admin/login", user)
       .then(function(response) {
         if (response === "ok") {
-          /* axios.post("/api/admin_dashboard/auth", {
+          axios.post("/api/admin_dashboard/auth", {
             auth: true
-          }); */
+          });
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */

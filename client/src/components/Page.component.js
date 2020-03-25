@@ -14,7 +14,7 @@ class Page extends React.Component {
   state = {
     auth: false
   };
-  componentWillMount() {
+  componentDidMount() {
     axios.get("/api/admin_dashboard/auth").then(response => {
       console.log("get", response.data);
       this.setState({
