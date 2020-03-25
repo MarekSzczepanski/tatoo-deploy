@@ -16,7 +16,7 @@ class Page extends React.Component {
   };
 
   componentWillMount() {
-    fetch("/auth").then(response => {
+    fetch("/api/admin/auth").then(response => {
       this.setState({
         auth: response.data.auth
       });
