@@ -42,9 +42,9 @@ class Admin extends React.Component {
     };
     axios
       .post("/api/admin/login", user)
-      .then(async function(response) {
+      .then(function(response) {
         if (response.data === "ok") {
-          try {
+          /* try {
             await axios.post(
               "/auth",
               { auth: true },
@@ -54,12 +54,12 @@ class Admin extends React.Component {
                 }
               }
             );
-          } catch (err) {}
+          } catch (err) {} */
           /* axios.post("/auth", {
             auth: true
           }); */
 
-          /*  fetch("/api/admin_dashboard/auth", {
+          fetch("/auth", {
             method: "POST",
             body: JSON.stringify({
               auth: "aaa"
@@ -72,7 +72,7 @@ class Admin extends React.Component {
             .then(function(body) {
               console.log(body);
               alert("o");
-            }); */
+            });
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */
