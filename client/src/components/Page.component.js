@@ -15,7 +15,7 @@ class Page extends React.Component {
     auth: true
   };
 
-  componentDidMount() {
+  componentWillMount() {
     fetch("/auth")
       .then(response => console.log("get", response.data))
       .then(response => {
