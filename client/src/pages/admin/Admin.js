@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Header from "../../components/admin/Header.component";
 import "../../styles/admin/Admin.css";
+const fetch = require("node-fetch");
 
 class Admin extends React.Component {
   listOfImages;
@@ -43,12 +44,18 @@ class Admin extends React.Component {
       .post("/api/admin/login", user)
       .then(function(response) {
         if (response.data === "ok") {
-          axios.post(
-            "https://tatoo-website.herokuapp.com/api/admin_dashboard/auth",
+          /* axios.post(
+            "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
             {
               auth: true
             }
-          );
+          ); */
+          fetch(
+            "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
+            { method: "POST", body: "hehe" }
+          )
+            .then(res => res.json()) // expecting a json response
+            .then(json => console.log(json));
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */
