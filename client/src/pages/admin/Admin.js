@@ -56,7 +56,7 @@ class Admin extends React.Component {
             "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
             {
               method: "post",
-              body: JSON.stringify(body),
+              body: "auth: true",
               headers: { "Content-Type": "application/json" }
             }
           )
