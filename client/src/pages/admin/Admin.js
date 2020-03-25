@@ -50,18 +50,24 @@ class Admin extends React.Component {
               auth: true
             }
           ); */
-          const body = { a: 1 };
 
           fetch(
             "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
             {
-              method: "post",
-              body: "auth: true",
+              method: "POST",
+              body: JSON.stringify({
+                auth: "aaa"
+              }),
               headers: { "Content-Type": "application/json" }
             }
           )
-            .then(res => res.json())
-            .then(json => console.log(json));
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(body) {
+              console.log(body);
+              alert("o");
+            });
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */
