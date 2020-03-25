@@ -50,11 +50,17 @@ class Admin extends React.Component {
               auth: true
             }
           ); */
+          const body = { a: 1 };
+
           fetch(
             "https://tatoo-website.herokuapp.com/#/api/admin_dashboard/auth",
-            { method: "POST", body: "hehe" }
+            {
+              method: "post",
+              body: JSON.stringify(body),
+              headers: { "Content-Type": "application/json" }
+            }
           )
-            .then(res => res.json()) // expecting a json response
+            .then(res => res.json())
             .then(json => console.log(json));
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
