@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-let auth;
+let auth = true;
 
 router.route("/auth").post((req, res) => {
   console.log("post", req.body);
