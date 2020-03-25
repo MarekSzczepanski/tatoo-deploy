@@ -16,19 +16,19 @@ class Page extends React.Component {
   };
 
   componentWillMount() {
-    fetch("/api/admin/auth").then(response => {
+    /* fetch("/api/admin/auth").then(response => {
       this.setState({
         auth: response.data.auth
       });
       console.log("get", response.data);
       console.log(this.state.auth);
-    });
-    /* axios.get("/auth").then(response => {
+    }); */
+    axios.get("/api/admin/auth").then(response => {
       console.log("get", response.data);
       this.setState({
         auth: response.data.auth
       });
-    }); */
+    });
   }
   render() {
     return (
