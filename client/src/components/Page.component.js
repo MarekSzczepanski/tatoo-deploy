@@ -12,10 +12,16 @@ import ErrorPage from "../pages/Error_page";
 
 class Page extends React.Component {
   state = {
-    auth: false
+    auth: true
   };
 
   componentWillMount() {
+    axios.get("/api/admin/auth").then(response => {
+      console.log("get", response.data);
+      this.setState({
+        auth: response.data.auth
+      });
+    });
     /* fetch("/api/admin/auth").then(response => {
       this.setState({
         auth: response.data.auth
@@ -25,12 +31,12 @@ class Page extends React.Component {
     }); */
   }
   componentDidMount() {
-    axios.get("/api/admin/auth").then(response => {
-      console.log("get", response);
+    /* axios.get("/api/admin/auth").then(response => {
+      console.log("get", response.data);
       this.setState({
         auth: response.data.auth
       });
-    });
+    }); */
   }
   render() {
     return (
