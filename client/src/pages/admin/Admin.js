@@ -31,6 +31,7 @@ class Admin extends React.Component {
       password: e.target.value
     });
   };
+  a = () => {};
   handleSubmit = e => {
     if (e) {
       e.preventDefault();
