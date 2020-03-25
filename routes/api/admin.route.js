@@ -12,10 +12,10 @@ router.route("/login").post((req, res) => {
         admin[0].password === req.body.password
       ) {
         auth = true;
-        /*  res.json("ok"); */
+        res.json("ok");
       } else {
         auth = false;
-        /* res.json("wrong password"); */
+        res.json("wrong password");
       }
     })
     .catch(err => res.status(400).json("Error: " + err));

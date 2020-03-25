@@ -59,13 +59,13 @@ class Admin extends React.Component {
             auth: true
           }); */
 
-          fetch("/auth", {
+          /* fetch("/auth", {
             method: "POST",
             body: JSON.stringify({
               auth: true
             }),
             headers: { "Content-Type": "application/json" }
-          });
+          }); */
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */
