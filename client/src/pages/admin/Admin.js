@@ -65,14 +65,7 @@ class Admin extends React.Component {
               auth: true
             }),
             headers: { "Content-Type": "application/json" }
-          })
-            .then(function(response) {
-              return response.json();
-            })
-            .then(function(body) {
-              console.log(body);
-              alert("o");
-            });
+          });
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */

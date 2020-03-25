@@ -12,7 +12,7 @@ import ErrorPage from "../pages/Error_page";
 
 class Page extends React.Component {
   state = {
-    auth: false
+    auth: true
   };
 
   componentDidMount() {
