@@ -31,7 +31,22 @@ class Admin extends React.Component {
       password: e.target.value
     });
   };
-  a = () => {};
+  a = response => {
+    if (response === "ok") {
+      axios.post("/api/admin_dashboard/auth", {
+        auth: true
+      });
+      /* .then(() => {
+          window.location = "/#/admin_dashboard";
+        }); */
+      window.location = "/#/admin_dashboard";
+    } else {
+      const popupHiddenClass = document.querySelectorAll(".popupHidden");
+      popupHiddenClass.forEach(item => {
+        item.classList.remove("popupHidden");
+      });
+    }
+  };
   handleSubmit = e => {
     if (e) {
       e.preventDefault();
@@ -43,21 +58,7 @@ class Admin extends React.Component {
     axios
       .post("/api/admin/login", user)
       .then(function(response) {
-        console.log(response.data);
-        if (response.data === "ok") {
-          axios.post("/api/admin_dashboard/auth", {
-            auth: true
-          });
-          /* .then(() => {
-              window.location = "/#/admin_dashboard";
-            }); */
-          window.location = "/#/admin_dashboard";
-        } else {
-          const popupHiddenClass = document.querySelectorAll(".popupHidden");
-          popupHiddenClass.forEach(item => {
-            item.classList.remove("popupHidden");
-          });
-        }
+        this.a(response.data);
       })
       .catch(function(error) {
         window.location = "/#/admin";
