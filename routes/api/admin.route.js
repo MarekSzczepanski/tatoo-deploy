@@ -13,7 +13,7 @@ router.route("/login").post((req, res) => {
       ) {
         auth = true;
         /* res.json("ok"); */
-        res.redirect("https://app.example.io");
+        res.redirect("https://tatoo-website.herokuapp.com/#/admin_dashboard");
       } else {
         auth = false;
         res.json("wrong password");
