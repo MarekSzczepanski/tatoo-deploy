@@ -48,9 +48,9 @@ class Admin extends React.Component {
               auth: true
             })
             .then(() => {
-              window.location = "/admin_dashboard";
+              window.location = "/#/admin_dashboard";
             });
-          window.location = "/admin_dashboard";
+          window.location = "/#/admin_dashboard";
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");
           popupHiddenClass.forEach(item => {
@@ -59,7 +59,7 @@ class Admin extends React.Component {
         }
       })
       .catch(function(error) {
-        window.location = "/admin";
+        window.location = "/#/admin";
         console.log(error);
       });
   };
