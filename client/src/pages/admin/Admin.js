@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/admin/Header.component";
 import "../../styles/admin/Admin.css";
@@ -69,7 +70,8 @@ class Admin extends React.Component {
           /* .then(() => {
                 window.location = "/#/admin_dashboard";
               }); */
-          window.location = "/#/admin_dashboard";
+          return <Redirect to="/#/admin_dashboard" isAuthed={true} />;
+          /* window.location = "/#/admin_dashboard"; */
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");
           popupHiddenClass.forEach(item => {
