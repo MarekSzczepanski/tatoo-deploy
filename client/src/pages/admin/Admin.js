@@ -11,11 +11,11 @@ class Admin extends React.Component {
     isErrorHidden: false,
     imagesList: []
   };
-  componentWillMount() {
+  /*  componentWillMount() {
     axios.post("/api/admin_dashboard/auth", {
       auth: true
     });
-  }
+  } */
   componentDidUpdate() {
     if (this.state.isErrorHidden) {
       document.getElementById("popupRoot").classList.add("popupHidden");
