@@ -16,7 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 class Home extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     axios.post("/api/admin_dashboard/auth", {
       auth: true
     });
