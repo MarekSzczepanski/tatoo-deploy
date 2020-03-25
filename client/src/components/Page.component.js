@@ -14,21 +14,8 @@ class Page extends React.Component {
   state = {
     auth: true
   };
-  componentDidUpdate() {
-    axios.get("/api/admin/auth").then(response => {
-      console.log("get", response.data);
-      this.setState({
-        auth: response.data.auth
-      });
-    });
-  }
+
   componentWillMount() {
-    axios.get("/api/admin/auth").then(response => {
-      console.log("get", response.data);
-      this.setState({
-        auth: response.data.auth
-      });
-    });
     /* fetch("/api/admin/auth").then(response => {
       this.setState({
         auth: response.data.auth
@@ -46,6 +33,16 @@ class Page extends React.Component {
     }); */
   }
   render() {
+    let re = false;
+    axios.get("/api/admin/auth").then(response => {
+      console.log("get", response.data);
+      re = response.data;
+    });
+    if (this.state.auth !== re) {
+      this.setState({
+        auth: re
+      });
+    }
     return (
       <>
         <Switch>
