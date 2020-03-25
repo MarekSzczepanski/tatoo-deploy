@@ -57,6 +57,11 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT || 5000;
+/* const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(port, () => console.log(`Server started on port ${port}`)); */
+
+var server = app.listen(process.env.PORT || 5000, function() {
+  var port = server.address().port;
+  console.log("Express is working on port " + port);
+});
