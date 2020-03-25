@@ -9,8 +9,7 @@ class Admin extends React.Component {
     username: "",
     password: "",
     isErrorHidden: false,
-    imagesList: [],
-    b: false
+    imagesList: []
   };
   componentWillMount() {
     axios.post("/api/admin_dashboard/auth", {
@@ -32,24 +31,7 @@ class Admin extends React.Component {
       password: e.target.value
     });
   };
-  a = response => {
-    if (response) {
-      axios.post("/api/admin_dashboard/auth", {
-        auth: true
-      });
-      /* .then(() => {
-          window.location = "/#/admin_dashboard";
-        }); */
-      window.location = "/#/admin_dashboard";
-    } else {
-      const popupHiddenClass = document.querySelectorAll(".popupHidden");
-      popupHiddenClass.forEach(item => {
-        item.classList.remove("popupHidden");
-      });
-    }
-  };
   handleSubmit = e => {
-    const st = this.a.bind(this);
     if (e) {
       e.preventDefault();
     }
@@ -60,7 +42,20 @@ class Admin extends React.Component {
     axios
       .post("/api/admin/login", user)
       .then(function(response) {
-        st("ok");
+        if (response === "ok") {
+          /* axios.post("/api/admin_dashboard/auth", {
+            auth: true
+          }); */
+          /* .then(() => {
+                window.location = "/#/admin_dashboard";
+              }); */
+          window.location = "/#/admin_dashboard";
+        } else {
+          const popupHiddenClass = document.querySelectorAll(".popupHidden");
+          popupHiddenClass.forEach(item => {
+            item.classList.remove("popupHidden");
+          });
+        }
       })
       .catch(function(error) {
         window.location = "/#/admin";
