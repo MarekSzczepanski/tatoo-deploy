@@ -14,13 +14,21 @@ class Page extends React.Component {
   state = {
     auth: true
   };
+
   componentDidMount() {
-    axios.get("/auth").then(response => {
+    fetch("/auth")
+      .then(response => console.log("get", response.data))
+      .then(response => {
+        this.setState({
+          auth: response.data.auth
+        });
+      });
+    /* axios.get("/auth").then(response => {
       console.log("get", response.data);
       this.setState({
         auth: response.data.auth
       });
-    });
+    }); */
   }
   render() {
     return (
