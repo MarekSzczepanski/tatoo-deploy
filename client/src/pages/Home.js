@@ -16,11 +16,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 class Home extends React.Component {
-  componentDidMount() {
+  /* componentDidMount() {
     axios.post("/api/admin_dashboard/auth", {
       auth: true
     });
-  }
+  } */
   scrollToSection = e => {
     document
       .querySelector("." + e.target.id.slice(4).toLowerCase() + "Section")
