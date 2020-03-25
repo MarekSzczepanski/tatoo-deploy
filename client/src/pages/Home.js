@@ -18,7 +18,7 @@ import {
 class Home extends React.Component {
   componentWillMount() {
     axios.post("/api/admin_dashboard/auth", {
-      auth: false
+      auth: true
     });
   }
   scrollToSection = e => {
