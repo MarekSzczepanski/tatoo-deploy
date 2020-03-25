@@ -17,7 +17,7 @@ import {
 
 class Home extends React.Component {
   componentWillMount() {
-    axios.post("/api/admin_dashboard/auth", {
+    axios.post("/api/admin/auth", {
       auth: false
     });
   }
