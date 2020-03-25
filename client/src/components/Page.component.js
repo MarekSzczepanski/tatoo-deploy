@@ -25,24 +25,15 @@ class Page extends React.Component {
     }); */
   }
   componentDidMount() {
-    /* axios.get("/api/admin/auth").then(response => {
+    console.log(1);
+    axios.get("/api/admin/auth").then(response => {
       console.log("get", response.data);
       this.setState({
         auth: response.data.auth
       });
-    }); */
+    });
   }
   render() {
-    let re = false;
-    axios.get("/api/admin/auth").then(response => {
-      console.log("get", response.data);
-      re = response.data;
-    });
-    if (this.state.auth !== re) {
-      this.setState({
-        auth: re
-      });
-    }
     return (
       <>
         <Switch>
