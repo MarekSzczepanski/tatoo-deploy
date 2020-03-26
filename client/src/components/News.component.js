@@ -51,6 +51,7 @@ class News extends React.Component {
     window.removeEventListener("scroll", this.showNewsByScrolling);
   }
   render() {
+    console.log(this.state.newsList);
     const renderNews = this.state.newsList.map(function(news, i) {
       return (
         <div className="homeNewsWrap" key={i}>
