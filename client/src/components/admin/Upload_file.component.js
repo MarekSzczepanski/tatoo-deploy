@@ -5,6 +5,7 @@ const UploadFile = () => {
   const [file, setFile] = useState("");
   const [filename, setFilename] = useState("Choose File");
   const [uploadedFile, setUploadedFile] = useState({});
+  const [heh, setHeh] = useState("");
 
   const onChange = e => {
     setFile(e.target.files[0]);
@@ -28,8 +29,23 @@ const UploadFile = () => {
   const showFileName = () => {
     document.querySelector(".fileName").style.display = "block";
   };
+  const hehe = () => {
+    const heh = document.querySelector(".hehe").value;
+    console.log(heh);
+    const im = document.createElement("img");
+    console.log(im);
+    im.src = heh;
+  };
+  const hoho = () => {
+    const heh = document.querySelector(".hehe").value;
+    console.log("hehe", heh);
+    setUploadedFile(heh);
+  };
   return (
     <Fragment>
+      <form onSubmit={hehe}>
+        <input onChange={hoho} type="text" className="hehe"></input>
+      </form>
       <form onSubmit={onSubmit} className="uploadForm">
         <input
           type="file"
