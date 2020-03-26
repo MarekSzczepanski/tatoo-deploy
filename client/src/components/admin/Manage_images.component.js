@@ -92,12 +92,15 @@ class ManageImages extends React.Component {
             <img
               key={index}
               className={"galleryImg"}
-              src={image}
+              src={
+                "https://upload.wikimedia.org/wikipedia/commons/c/c9/Moon.jpg"
+              }
               id={"galleryImage" + index}
               alt={"obrazek"}
               onClick={this.deleteImage}
             ></img>
           ))}
+
           <div id="popupRoot" className="popupRootImages">
             <div id="popupWrapDelete">
               <p id="popupMessageDelete">
