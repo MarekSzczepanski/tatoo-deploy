@@ -34,7 +34,7 @@ const UploadFile = () => {
     console.log(heh);
     const im = document.createElement("img");
     console.log(im);
-    document.getElementById("#manageImagesGalleryPageSection").appendChild(im);
+    document.getElementById("manageImagesGalleryPageSection").appendChild(im);
     im.src = heh;
   };
   const hoho = () => {
