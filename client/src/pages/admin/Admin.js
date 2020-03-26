@@ -13,11 +13,11 @@ class Admin extends React.Component {
     isErrorHidden: false,
     imagesList: []
   };
-  /*  componentWillMount() {
+  componentWillMount() {
     axios.post("/api/admin_dashboard/auth", {
       auth: true
     });
-  } */
+  }
   componentDidUpdate() {
     if (this.state.isErrorHidden) {
       document.getElementById("popupRoot").classList.add("popupHidden");
@@ -45,31 +45,13 @@ class Admin extends React.Component {
       .post("/api/admin/login", user)
       .then(function(response) {
         if (response.data === "ok") {
-          /* try {
-            await axios.post(
-              "/auth",
-              { auth: true },
-              {
-                headers: {
-                  "Content-Type": "multipart/form-data"
-                }
-              }
-            );
-          } catch (err) {} */
-          /* axios.post("/auth", {
-            auth: true
-          }); */
-
-          /* fetch("/auth", {
-            method: "POST",
-            body: JSON.stringify({
+          axios
+            .post("api/admin_dashboard/auth", {
               auth: true
-            }),
-            headers: { "Content-Type": "application/json" }
-          }); */
-          /* .then(() => {
-                window.location = "/#/admin_dashboard";
-              }); */
+            })
+            .then(() => {
+              window.location = "/#/admin_dashboard";
+            });
           window.location = "/#/admin_dashboard";
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");
