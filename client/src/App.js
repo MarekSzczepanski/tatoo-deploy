@@ -51,7 +51,7 @@ class App extends React.Component {
       password: this.state.password
     };
     axios
-      .post("http://localhost:5000/api/admin/login", user)
+      .post("/api/admin/login", user)
       .then(function(response) {
         if (response.data === "ok") {
           boundThis();
