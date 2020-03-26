@@ -93,6 +93,7 @@ class ManageImages extends React.Component {
         <section
           className="galleryPageSection"
           style={{ backgroundColor: "#ccc" }}
+          id="manageImagesGalleryPageSection"
         >
           {this.listOfImages.map((image, index) => (
             <img
