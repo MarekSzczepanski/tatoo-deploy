@@ -24,6 +24,8 @@ class ManageImages extends React.Component {
     const fileNameLength = fileName.length;
     let fileFormat;
     let fileNameNoHash;
+    console.log(fullPath);
+    console.log(fileName);
     console.log(fileName.substring(fileNameLength - 4));
     if (fileName.substring(fileNameLength - 4, fileNameLength - 3) === ".") {
       fileFormat = fileName.substring(fileNameLength, fileNameLength - 4);
@@ -33,7 +35,7 @@ class ManageImages extends React.Component {
       fileNameNoHash = fileName.substring(0, fileNameLength - 14);
     }
     this.setState({
-      imageToDelete: "../public/uploads/" + fileNameNoHash + fileFormat
+      imageToDelete: "../client/public/uploads/" + fileNameNoHash + fileFormat
     });
   };
   confirmDeletion = () => {
