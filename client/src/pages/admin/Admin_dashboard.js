@@ -4,6 +4,7 @@ import "../../styles/admin/Admin_dashboard.css";
 
 class Admin_dashboard extends React.Component {
   render() {
+    console.log("dash props", this.props.isAuthed);
     if (this.props.isAuthed) {
       return <AdminDashboard />;
     } else {

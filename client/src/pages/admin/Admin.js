@@ -1,24 +1,20 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/admin/Header.component";
 import "../../styles/admin/Admin.css";
-const fetch = require("node-fetch");
 
 class Admin extends React.Component {
-  listOfImages;
-  state = {
+  /* state = {
     username: "",
     password: "",
-    isErrorHidden: false,
-    imagesList: []
-  };
-  componentWillMount() {
-    axios.post("/api/admin_dashboard/auth", {
+    isErrorHidden: false
+  }; */
+  /* componentWillMount() {
+    axios.post("http://localhost:5000/api/admin_dashboard/auth", {
       auth: true
     });
-  }
-  componentDidUpdate() {
+  } */
+  /* componentDidUpdate() {
     if (this.state.isErrorHidden) {
       document.getElementById("popupRoot").classList.add("popupHidden");
     }
@@ -42,17 +38,19 @@ class Admin extends React.Component {
       password: this.state.password
     };
     axios
-      .post("/api/admin/login", user)
+      .post("http://localhost:5000/api/admin/login", user)
       .then(function(response) {
         if (response.data === "ok") {
+          DAC FORMULARZ I PRZYCISK DO PAGE, DAC IM POSITION ABSOLUTE I DISPLAY BLOCK GDY
+          WINDOW LOCATION = /ADMIN I WTEDY MOZNA ZMIENIC STATE W PAGE BEZ POSTA W AXIOSIE
           axios
-            .post("api/admin_dashboard/auth", {
+            .post("http://localhost:5000/api/admin_dashboard/auth", {
               auth: true
             })
             .then(() => {
-              window.location = "/#/admin_dashboard";
+              window.location = "/admin_dashboard";
             });
-          window.location = "/#/admin_dashboard";
+          window.location = "/admin_dashboard";
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");
           popupHiddenClass.forEach(item => {
@@ -61,7 +59,7 @@ class Admin extends React.Component {
         }
       })
       .catch(function(error) {
-        window.location = "/#/admin";
+        window.location = "/admin";
         console.log(error);
       });
   };
@@ -69,19 +67,19 @@ class Admin extends React.Component {
     this.setState({
       isErrorHidden: true
     });
-  };
+  }; */
   render() {
-    let isHiddenClass;
+    /*  let isHiddenClass;
     if (!this.state.isErrorHidden) {
       isHiddenClass = "popupHidden";
     } else {
       isHiddenClass = "";
-    }
+    } */
 
     return (
       <>
         <Header />
-        <div className="adminLoginWrap">
+        {/* <div className="adminLoginWrap">
           <h1 className="adminLoginH1">Podaj dane logowania</h1>
           <form onSubmit={this.handleSubmit} className="adminLoginForm">
             <input
@@ -113,7 +111,7 @@ class Admin extends React.Component {
               ok
             </button>
           </div>
-        </div>
+        </div> */}
       </>
     );
   }
