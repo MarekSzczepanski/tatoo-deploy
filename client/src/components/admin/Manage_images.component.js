@@ -38,7 +38,7 @@ class ManageImages extends React.Component {
   };
   confirmDeletion = () => {
     axios
-      .post("http://localhost:5000/api/images_list", {
+      .post("/api/images_list", {
         path: this.state.imageToDelete
       })
       .catch(error => {
