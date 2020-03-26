@@ -32,7 +32,7 @@ class News extends React.Component {
     }
   };
   componentDidMount() {
-    axios
+    /* axios
       .get("/api/news_list")
       .then(response => {
         this.resp = response.data;
@@ -43,7 +43,7 @@ class News extends React.Component {
       })
       .catch(error => {
         console.log(error);
-      });
+      }); */
     if (window.innerWidth > 1300) {
       window.addEventListener("scroll", this.showNewsByScrolling);
     }
@@ -56,7 +56,7 @@ class News extends React.Component {
     window.removeEventListener("scroll", this.showNewsByScrolling);
   }
   render() {
-    const renderNews = this.state.newsList.map(function(news, i) {
+    /* const renderNews = this.state.newsList.map(function(news, i) {
       return (
         <div className="homeNewsWrap" key={i}>
           <div className="homeNewsTitle">
@@ -68,7 +68,7 @@ class News extends React.Component {
           </div>
         </div>
       );
-    });
+    }); */
     return (
       <>
         <div className="newsMainWrap">
@@ -78,7 +78,7 @@ class News extends React.Component {
           </div>
           <section className="newsSection">
             <h2 className="newsH2">co nowego</h2>
-            <div className="newsWrap">{renderNews}</div>
+            {/* <div className="newsWrap">{renderNews}</div> */}
           </section>
         </div>
       </>
