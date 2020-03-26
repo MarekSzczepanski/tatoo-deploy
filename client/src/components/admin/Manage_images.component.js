@@ -9,12 +9,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class ManageImages extends React.Component {
   listOfImages;
   state = {
-    imageToDelete: null
+    imageToDelete: null,
+    heh: null
   };
   importAll(r) {
     return r.keys().map(r);
   }
   deleteImage = e => {
+    this.setState({
+      heh: e.target.id
+    });
     document.querySelector(".popupRootImages").style.display = "block";
     e.target.style.border = "7px solid #e95252";
     e.target.style.backgroundColor = "#e95252";
@@ -39,6 +43,8 @@ class ManageImages extends React.Component {
     });
   };
   confirmDeletion = () => {
+    var el = document.getElementById(this.state.heh);
+    el.remove(); // Usuwa div z ID 'div-02'
     axios
       .post("/api/images_list", {
         path: this.state.imageToDelete
