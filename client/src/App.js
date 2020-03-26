@@ -78,7 +78,7 @@ class App extends React.Component {
         }
       })
       .catch(function(error) {
-        window.location = "/admin";
+        window.location = "/#/admin";
         console.log(error);
       });
   };
