@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import gsap from "gsap";
 import "../styles/styles.scss";
 import {
@@ -9,10 +10,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Gallery extends React.Component {
-  listOfImages;
+  resp;
   state = {
     imagesDisplayed: [],
-    allImages: []
+    allImages: [],
+    imagesLinks: []
   };
   /*   importAll(r) {
     return r.keys().map(r);
@@ -34,12 +36,22 @@ class Gallery extends React.Component {
     ); */
   }
   componentDidMount() {
-    const images = document.querySelectorAll(".galleryImage");
-    for (let i = 0; i < images.length; i++) {
-      images[i].id = "galleryImage" + i;
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        this.resp = response.data;
+        console.log(this.resp);
+        this.setState({
+          imagesLinks: this.resp.reverse()
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    if (window.innerWidth > 1300) {
+      window.addEventListener("scroll", this.showNewsByScrolling);
     }
     this.displayImages([0, 1, 2, 3, 4]);
-    this.listOfImages = images;
   }
   componentDidUpdate() {
     const leftChevron = document.querySelector(".galleryChevronLeft");
@@ -170,6 +182,7 @@ class Gallery extends React.Component {
     }
   };
   render() {
+    console.log("imagesLinks", this.state.imagesLinks);
     let areImagesDisplayed = false;
     const allImages = document.querySelectorAll(".galleryImg");
     allImages.forEach(image => {
@@ -180,12 +193,27 @@ class Gallery extends React.Component {
     if (!areImagesDisplayed) {
       this.displayImages([0, 1, 2, 3, 4]);
     }
+    const renderImages = this.state.imagesLinks.map(function(news, i) {
+      return (
+        <img
+          className="galleryImg"
+          id={"galleryImage" + i}
+          key={i}
+          src={this.state.imagesLinks[i]}
+          alt="info"
+        />
+      );
+    });
     return (
       <section className="gallerySection">
         <div className="imagesWrap">
-          {this.listOfImages.map((image, index) => (
+          {
+            renderImages
+
+            /* this.listOfImages.map((image, index) => (
             <img key={index} src={image.src} alt="info"></img>
-          ))}
+          )) */
+          }
         </div>
         <FontAwesomeIcon
           icon={faChevronLeft}

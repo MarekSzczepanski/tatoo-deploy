@@ -30,6 +30,8 @@ const UploadFile = () => {
   };
   const handleSubmit = () => {
     const imageLink = document.querySelector(".imageLinkInput").value;
+    axios.post("/api/manage_image/add_image", imageLink);
+    /* const imageLink = document.querySelector(".imageLinkInput").value;
     console.log(imageLink);
     const newImage = document.createElement("img");
     console.log(newImage);
@@ -37,7 +39,7 @@ const UploadFile = () => {
       .getElementById("manageImagesGalleryPageSection")
       .appendChild(newImage);
     newImage.src = imageLink;
-    newImage.classList.add(".galleryImg");
+    newImage.classList.add(".galleryImg"); */
   };
 
   return (

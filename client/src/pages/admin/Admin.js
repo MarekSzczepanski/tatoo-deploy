@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+
 import Header from "../../components/admin/Header.component";
 import "../../styles/admin/Admin.css";
 
