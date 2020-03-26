@@ -14,9 +14,9 @@ class Gallery extends React.Component {
     imagesDisplayed: [],
     allImages: []
   };
-  importAll(r) {
+  /*   importAll(r) {
     return r.keys().map(r);
-  }
+  } */
   displayImages = imagesToDisplay => {
     const allImages = document.querySelectorAll(".galleryImg");
     const allImagesIds = [];
@@ -29,12 +29,17 @@ class Gallery extends React.Component {
     });
   };
   componentWillMount() {
-    this.listOfImages = this.importAll(
+    /* this.listOfImages = this.importAll(
       require.context("../../public/uploads", false, /\.(png|jpe?g|svg)$/)
-    );
+    ); */
   }
   componentDidMount() {
+    const images = document.querySelectorAll(".galleryImage");
+    for (let i = 0; i < images.length; i++) {
+      images[i].id = "galleryImage" + i;
+    }
     this.displayImages([0, 1, 2, 3, 4]);
+    this.listOfImages = images;
   }
   componentDidUpdate() {
     const leftChevron = document.querySelector(".galleryChevronLeft");
@@ -179,13 +184,7 @@ class Gallery extends React.Component {
       <section className="gallerySection">
         <div className="imagesWrap">
           {this.listOfImages.map((image, index) => (
-            <img
-              key={index}
-              className={"galleryImg"}
-              src={image}
-              id={"galleryImage" + index}
-              alt="info"
-            ></img>
+            <img key={index} src={image.src} alt="info"></img>
           ))}
         </div>
         <FontAwesomeIcon

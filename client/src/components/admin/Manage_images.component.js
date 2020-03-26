@@ -7,23 +7,21 @@ import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class ManageImages extends React.Component {
-  listOfImages;
   state = {
-    imageToDelete: null,
-    heh: null
+    imageToDelete: null
   };
-  importAll(r) {
+  /*   importAll(r) {
     return r.keys().map(r);
-  }
+  } */
   deleteImage = e => {
     this.setState({
-      heh: e.target.id
+      imageToDelete: e.target.id
     });
     document.querySelector(".popupRootImages").style.display = "block";
     e.target.style.border = "7px solid #e95252";
     e.target.style.backgroundColor = "#e95252";
     e.target.classList.add("redBorder");
-    const fullPath = e.target.src;
+    /* const fullPath = e.target.src;
     const fileName = fullPath.replace(/^.*[\\\/]/, "");
     const fileNameLength = fileName.length;
     let fileFormat;
@@ -40,18 +38,18 @@ class ManageImages extends React.Component {
     }
     this.setState({
       imageToDelete: "./client/public/uploads/" + fileNameNoHash + fileFormat
-    });
+    }); */
   };
   confirmDeletion = () => {
-    var el = document.getElementById(this.state.heh);
-    el.remove(); // Usuwa div z ID 'div-02'
-    axios
+    const imageToDelete = document.getElementById(this.state.imageToDelete);
+    imageToDelete.remove(); // Usuwa div z ID 'div-02'
+    /* axios
       .post("/api/images_list", {
         path: this.state.imageToDelete
       })
       .catch(error => {
         console.log(error);
-      });
+      }); */
   };
   cancelDeletion = e => {
     const redBorder = document.querySelector(".redBorder");
@@ -60,9 +58,9 @@ class ManageImages extends React.Component {
     document.querySelector(".popupRootImages").style.display = "none";
   };
   componentWillMount() {
-    this.listOfImages = this.importAll(
+    /* this.listOfImages = this.importAll(
       require.context("../../../public/uploads", false, /\.(png|jpe?g|svg)$/)
-    );
+    ); */
   }
 
   render() {
@@ -95,7 +93,7 @@ class ManageImages extends React.Component {
           style={{ backgroundColor: "#ccc" }}
           id="manageImagesGalleryPageSection"
         >
-          {this.listOfImages.map((image, index) => (
+          {/* {this.listOfImages.map((image, index) => (
             <img
               key={index}
               className={"galleryImg"}
@@ -106,7 +104,7 @@ class ManageImages extends React.Component {
               alt={"obrazek"}
               onClick={this.deleteImage}
             ></img>
-          ))}
+          ))} */}
 
           <div id="popupRoot" className="popupRootImages">
             <div id="popupWrapDelete">

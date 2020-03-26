@@ -5,7 +5,6 @@ const UploadFile = () => {
   const [file, setFile] = useState("");
   const [filename, setFilename] = useState("Choose File");
   const [uploadedFile, setUploadedFile] = useState({});
-  const [heh, setHeh] = useState("");
 
   const onChange = e => {
     setFile(e.target.files[0]);
@@ -29,23 +28,22 @@ const UploadFile = () => {
   const showFileName = () => {
     document.querySelector(".fileName").style.display = "block";
   };
-  const hehe = () => {
-    const heh = document.querySelector(".hehe").value;
-    console.log(heh);
-    const im = document.createElement("img");
-    console.log(im);
-    document.getElementById("manageImagesGalleryPageSection").appendChild(im);
-    im.src = heh;
+  const handleSubmit = () => {
+    const imageLink = document.querySelector(".imageLinkInput").value;
+    console.log(imageLink);
+    const newImage = document.createElement("img");
+    console.log(newImage);
+    document
+      .getElementById("manageImagesGalleryPageSection")
+      .appendChild(newImage);
+    newImage.src = imageLink;
+    newImage.classList.add(".galleryImg");
   };
-  const hoho = () => {
-    const heh = document.querySelector(".hehe").value;
-    console.log("hehe", heh);
-    setUploadedFile(heh);
-  };
+
   return (
     <Fragment>
-      <form onSubmit={hehe}>
-        <input onChange={hoho} type="text" className="hehe"></input>
+      <form onSubmit={handleSubmit}>
+        <input type="text" className="imageLinkInput"></input>
       </form>
       <form onSubmit={onSubmit} className="uploadForm">
         <input
@@ -64,7 +62,7 @@ const UploadFile = () => {
         <p className="fileName">{filename}</p>
         <input type="submit" value="załaduj zdjęcie" className="uploadInput" />
       </form>
-      {uploadedFile ? (
+      {/*  {uploadedFile ? (
         <div className="row mt-5">
           <div className="col-md-6 m-auto">
             <img
@@ -75,7 +73,7 @@ const UploadFile = () => {
             />
           </div>
         </div>
-      ) : null}
+      ) : null} */}
     </Fragment>
   );
 };
