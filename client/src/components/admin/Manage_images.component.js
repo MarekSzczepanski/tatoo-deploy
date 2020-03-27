@@ -79,8 +79,9 @@ class ManageImages extends React.Component {
         /* this.resp = response.data; */
         /* console.log(this.resp); */
         console.log(1, boundState);
-        boundState(response.data);
         console.log(5, response.data);
+        boundState(response.data);
+
         /* this.setState({
           imagesLinks: response.data.reverse()
         }); */
@@ -91,13 +92,15 @@ class ManageImages extends React.Component {
   }
   render() {
     const style = "returnLink darkBackground";
+    const hehe = this.state.imagesLinks;
+    console.log("hehe", hehe);
     const renderImages = this.state.imagesLinks.map(function(news, i) {
       return (
         <img
           className="galleryImg"
           id={"galleryImage" + i}
           key={i}
-          src={this.state.imagesLinks[i]}
+          src={hehe[i]}
           alt="info"
         />
       );
