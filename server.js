@@ -72,7 +72,7 @@ const adminRouter = require("./routes/api/admin.route");
 const admin_dashboardRouter = require("./routes/api/admin_dashboard.route");
 const add_newsRouter = require("./routes/api/add_news.route");
 const delete_newsRouter = require("./routes/api/delete_news.route");
-const manage_imageRouter = require("./routes/api/manage_images.route");
+const manage_imageRouter = require("./routes/api/manage_image.route");
 
 app.use("/api/", homeRouter);
 app.use("/api/admin", adminRouter);
