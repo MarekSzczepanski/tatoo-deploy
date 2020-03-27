@@ -64,15 +64,23 @@ class ManageImages extends React.Component {
       require.context("../../../public/uploads", false, /\.(png|jpe?g|svg)$/)
     ); */
   }
+
+  changeState = respo => {
+    this.setState({
+      imagesLinks: respo.reverse()
+    });
+  };
   componentDidMount() {
+    const boundState = this.changeState.bind(this);
     axios
       .get("/api/images_list")
       .then(response => {
-        this.resp = response.data;
-        console.log(this.resp);
-        this.setState({
-          imagesLinks: this.resp.reverse()
-        });
+        /* this.resp = response.data; */
+        /* console.log(this.resp); */
+        boundState(response.data);
+        /* this.setState({
+          imagesLinks: response.data.reverse()
+        }); */
       })
       .catch(error => {
         console.log(error);
