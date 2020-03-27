@@ -31,14 +31,19 @@ class ManageImages extends React.Component {
     console.log(77, imageToDelete.id.slice(12));
     console.log(99, this.state.imagesLinks[imageToDelete.id.slice(12)]._id);
 
-    axios.post(
-      "/api/manage_image/" +
-        this.state.imagesLinks[imageToDelete.id.slice(12)]._id.then(
-          this.setState({
-            renderOnTrue: true
-          })
-        )
-    );
+    axios
+      .post(
+        "/api/manage_image/" +
+          this.state.imagesLinks[imageToDelete.id.slice(12)]._id
+      )
+      .then(
+        this.setState({
+          renderOnTrue: true
+        })
+      )
+      .catch(error => {
+        console.log(error);
+      });
   };
   cancelDeletion = e => {
     const redBorder = document.querySelector(".redBorder");
