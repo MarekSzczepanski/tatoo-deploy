@@ -10,7 +10,8 @@ class ManageImages extends React.Component {
   resp;
   state = {
     imageToDelete: null,
-    imagesLinks: []
+    imagesLinks: [],
+    renderOnTrue: false
   };
   deleteImage = e => {
     this.setState({
@@ -32,7 +33,11 @@ class ManageImages extends React.Component {
 
     axios.post(
       "/api/manage_image/" +
-        this.state.imagesLinks[imageToDelete.id.slice(12)]._id
+        this.state.imagesLinks[imageToDelete.id.slice(12)]._id.then(
+          this.setState({
+            renderOnTrue: true
+          })
+        )
     );
   };
   cancelDeletion = e => {
