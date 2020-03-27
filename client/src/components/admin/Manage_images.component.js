@@ -80,7 +80,7 @@ class ManageImages extends React.Component {
         /* console.log(this.resp); */
         console.log(1, boundState);
         boundState(response.data);
-
+        console.log(5, response.data);
         /* this.setState({
           imagesLinks: response.data.reverse()
         }); */
