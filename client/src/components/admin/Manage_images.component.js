@@ -40,6 +40,7 @@ class ManageImages extends React.Component {
   componentDidMount() {
     console.log("this", this);
     const boundState = this.changeState.bind(this);
+    const boundDelete = this.deleteImage.bind(this);
     axios
       .get("/api/images_list")
       .then(response => {
@@ -50,7 +51,7 @@ class ManageImages extends React.Component {
       });
     const images = document.querySelectorAll(".manageImg");
     images.forEach(image => {
-      image.addEventListener("click", this.deleteImage);
+      image.addEventListener("click", boundDelete);
     });
   }
   render() {
