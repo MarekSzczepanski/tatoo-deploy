@@ -12,10 +12,8 @@ class ManageImages extends React.Component {
     imageToDelete: null,
     imagesLinks: []
   };
-  /*   importAll(r) {
-    return r.keys().map(r);
-  } */
   deleteImage = e => {
+    console.log("y");
     this.setState({
       imageToDelete: e.target.id
     });
@@ -23,35 +21,10 @@ class ManageImages extends React.Component {
     e.target.style.border = "7px solid #e95252";
     e.target.style.backgroundColor = "#e95252";
     e.target.classList.add("redBorder");
-    /* const fullPath = e.target.src;
-    const fileName = fullPath.replace(/^.*[\\\/]/, "");
-    const fileNameLength = fileName.length;
-    let fileFormat;
-    let fileNameNoHash;
-    console.log(fullPath);
-    console.log(fileName);
-    console.log(fileName.substring(fileNameLength - 4));
-    if (fileName.substring(fileNameLength - 4, fileNameLength - 3) === ".") {
-      fileFormat = fileName.substring(fileNameLength, fileNameLength - 4);
-      fileNameNoHash = fileName.substring(0, fileNameLength - 13);
-    } else if (fileName.substring(fileNameLength - 4) === "jpeg") {
-      fileFormat = ".jpeg";
-      fileNameNoHash = fileName.substring(0, fileNameLength - 14);
-    }
-    this.setState({
-      imageToDelete: "./client/public/uploads/" + fileNameNoHash + fileFormat
-    }); */
   };
   confirmDeletion = () => {
     const imageToDelete = document.getElementById(this.state.imageToDelete);
-    imageToDelete.remove(); // Usuwa div z ID 'div-02'
-    /* axios
-      .post("/api/images_list", {
-        path: this.state.imageToDelete
-      })
-      .catch(error => {
-        console.log(error);
-      }); */
+    imageToDelete.remove();
   };
   cancelDeletion = e => {
     const redBorder = document.querySelector(".redBorder");
@@ -59,12 +32,6 @@ class ManageImages extends React.Component {
     redBorder.style.backgroundColor = "transparent";
     document.querySelector(".popupRootImages").style.display = "none";
   };
-  componentWillMount() {
-    /* this.listOfImages = this.importAll(
-      require.context("../../../public/uploads", false, /\.(png|jpe?g|svg)$/)
-    ); */
-  }
-
   changeState = respo => {
     this.setState({
       imagesLinks: respo.reverse()
@@ -76,15 +43,7 @@ class ManageImages extends React.Component {
     axios
       .get("/api/images_list")
       .then(response => {
-        /* this.resp = response.data; */
-        /* console.log(this.resp); */
-        console.log(1, boundState);
-        console.log(5, response.data);
         boundState(response.data);
-
-        /* this.setState({
-          imagesLinks: response.data.reverse()
-        }); */
       })
       .catch(error => {
         console.log(error);
@@ -92,16 +51,16 @@ class ManageImages extends React.Component {
   }
   render() {
     const style = "returnLink darkBackground";
-    const hehe = this.state.imagesLinks;
-    console.log("hehe", hehe);
-    const renderImages = this.state.imagesLinks.map(function(news, i) {
+    const state = this.state;
+    const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
         <img
           className="galleryImg"
           id={"galleryImage" + i}
           key={i}
-          src={hehe[i].src}
+          src={state.imagesLinks[i].src}
           alt="info"
+          onClick={state.deleteImage}
         />
       );
     });
