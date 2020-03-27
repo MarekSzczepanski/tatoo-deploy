@@ -6,7 +6,9 @@ class UploadFile extends React.Component {
     e.preventDefault();
     const imageLink = document.querySelector(".imageLinkInput").value;
     console.log(imageLink);
-    axios.post("/api/manage_image/add_image", imageLink);
+    axios.post("/api/manage_image/add_image", {
+      link: imageLink
+    });
     /* const imageLink = document.querySelector(".imageLinkInput").value;
     console.log(imageLink);
     const newImage = document.createElement("img");
