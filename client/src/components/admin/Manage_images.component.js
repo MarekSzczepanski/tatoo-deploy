@@ -72,14 +72,15 @@ class ManageImages extends React.Component {
   };
   componentDidMount() {
     console.log("this", this);
-    const boundState = this.changeState;
-    console.log("B", boundState);
+    const boundState = this.changeState.bind(this);
     axios
       .get("/api/images_list")
       .then(response => {
         /* this.resp = response.data; */
         /* console.log(this.resp); */
+        console.log(1, boundState);
         boundState(response.data);
+
         /* this.setState({
           imagesLinks: response.data.reverse()
         }); */
