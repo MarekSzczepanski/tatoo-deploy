@@ -48,6 +48,10 @@ class ManageImages extends React.Component {
       .catch(error => {
         console.log(error);
       });
+    const images = document.querySelectorAll(".manageImg");
+    images.forEach(image => {
+      image.addEventListener("click", this.deleteImage);
+    });
   }
   render() {
     const style = "returnLink darkBackground";
@@ -55,12 +59,11 @@ class ManageImages extends React.Component {
     const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
         <img
-          className="galleryImg"
+          className="manageImg"
           id={"galleryImage" + i}
           key={i}
           src={state.imagesLinks[i].src}
           alt="info"
-          onClick={state.deleteImage}
         />
       );
     });
