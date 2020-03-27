@@ -4,14 +4,15 @@ import axios from "axios";
 class UploadFile extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
+    const boundThis = this;
     const imageLink = document.querySelector(".imageLinkInput").value;
     console.log(imageLink);
     axios
       .post("/api/manage_image/add_image", {
         link: imageLink
       })
-      .then(console.log(555, this.props))
-      .then(this.props.rerender());
+      .then(console.log(555, boundThis.props))
+      .then(boundThis.props.rerender());
   };
   render() {
     return (
