@@ -111,7 +111,7 @@ class ManageImages extends React.Component {
         <div className="imageUploadContainer">
           <h1 className="uploadH1">Dodaj zdjęcie</h1>
           <div className="imagesContainer"></div>
-          <UploadFile rerender={this.state.rerenderComponent} />
+          <UploadFile rerender={this.rerenderComponent} />
         </div>
         <h1 className="deleteImageH1">Kliknij na zdjecie by je usunąć</h1>
         <section
