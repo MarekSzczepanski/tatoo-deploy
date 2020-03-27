@@ -4,7 +4,7 @@ import axios from "axios";
 class UploadFile extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
-    const boundThisProps = this.props.bind(this);
+    const boundThisProps = this.props;
     const imageLink = document.querySelector(".imageLinkInput").value;
     console.log(imageLink);
     axios
@@ -12,7 +12,7 @@ class UploadFile extends React.Component {
         link: imageLink
       })
       .then(console.log(555, boundThisProps))
-      .then(boundThisProps.rerender());
+      .then(boundThisProps.rerender);
   };
   render() {
     return (
