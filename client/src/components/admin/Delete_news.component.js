@@ -18,7 +18,7 @@ class DeleteNews extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("/api/delete_news/update")
+      .get("/api/news_list")
       .then(response => {
         this.setState({
           newsList: response.data
@@ -54,7 +54,7 @@ class DeleteNews extends React.Component {
     const boundUpdateNewsList = this.updateNewsList.bind(this);
     const boundNewsListUpdated = this.newsListUpdated.bind(this);
     axios
-      .get("/api/delete_news/update")
+      .get("/api/news_list")
       .then(response => {
         console.log("state", this.state.newsList.length);
         console.log("resp", response.data.length);

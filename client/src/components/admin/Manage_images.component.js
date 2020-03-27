@@ -13,7 +13,6 @@ class ManageImages extends React.Component {
     imagesLinks: []
   };
   deleteImage = e => {
-    console.log("y");
     this.setState({
       imageToDelete: e.target.id
     });
@@ -26,10 +25,14 @@ class ManageImages extends React.Component {
     const imageToDelete = document.getElementById(this.state.imageToDelete);
     imageToDelete.remove();
     document.querySelector(".popupRootImages").style.display = "none";
+    axios.post(
+      "/api/delete_images/" +
+        this.state.imagesLinks[imageToDelete.id.slice(6)].id
+    );
   };
   cancelDeletion = e => {
     const redBorder = document.querySelector(".redBorder");
-    redBorder.style.borderStyle = "0px solid transparent";
+    redBorder.style.borderStyle = "none";
     redBorder.style.backgroundColor = "transparent";
     document.querySelector(".popupRootImages").style.display = "none";
   };

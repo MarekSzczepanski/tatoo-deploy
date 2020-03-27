@@ -7,9 +7,4 @@ router.route("/:id").post((req, res) => {
     .then(() => res.json("news deleted."))
     .catch(err => res.status(400).json("Error: " + err));
 });
-router.route("/update").get((req, res) => {
-  News_tatoo.find()
-    .then(news => res.json(news))
-    .catch(err => res.status(400).json("Error: " + err));
-});
 module.exports = router;
