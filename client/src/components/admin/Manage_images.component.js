@@ -25,10 +25,11 @@ class ManageImages extends React.Component {
   confirmDeletion = () => {
     const imageToDelete = document.getElementById(this.state.imageToDelete);
     imageToDelete.remove();
+    document.querySelector(".popupRootImages").style.display = "none";
   };
   cancelDeletion = e => {
     const redBorder = document.querySelector(".redBorder");
-    redBorder.style.borderStyle = "none";
+    redBorder.style.borderStyle = "0px solid transparent";
     redBorder.style.backgroundColor = "transparent";
     document.querySelector(".popupRootImages").style.display = "none";
   };
