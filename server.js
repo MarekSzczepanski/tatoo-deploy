@@ -79,7 +79,7 @@ app.use("/api/admin", adminRouter);
 app.use("/api/admin_dashboard", admin_dashboardRouter);
 app.use("/api/add_news", add_newsRouter);
 app.use("/api/delete_news", delete_newsRouter);
-app.use("/api/manage_images", add_newsRouter);
+app.use("/api/manage_image", add_newsRouter);
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
