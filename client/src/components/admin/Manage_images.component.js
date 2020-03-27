@@ -59,6 +59,7 @@ class ManageImages extends React.Component {
   render() {
     const style = "returnLink darkBackground";
     const state = this.state;
+    console.log("st", this.state.imagesLinks);
     const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
         <img
