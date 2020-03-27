@@ -1,0 +1,145 @@
+.adminLoginWrap {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.adminLoginForm {
+  display: flex;
+  justify-content: center;
+}
+.adminLoginH1 {
+  letter-spacing: 0.2rem;
+}
+.adminLoginInput {
+  text-align: center;
+}
+.adminSubmit {
+  background-color: #60d932;
+  border: 1px solid #333;
+  max-width: 10rem;
+}
+#popupRoot {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.popupHidden {
+  display: none;
+}
+#popupWrap {
+  display: flex;
+  padding: 0 5%;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  background: #eee;
+  border: solid 2px black;
+  max-width: 45rem;
+}
+#popupMessage {
+  flex-grow: 3;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+#popupButton {
+  width: 25%;
+  height: 20%;
+  flex-grow: 1;
+  background: #555;
+  border: 1px solid black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+@media (min-width: 320px) {
+  .adminLoginWrap {
+    height: 15rem;
+    padding-top: 3rem;
+  }
+  .adminLoginForm {
+    width: 100%;
+    padding-top: 3rem;
+  }
+  .adminLoginH1 {
+    font-size: 1.2rem;
+  }
+  .adminLoginInput {
+    width: 38%;
+    height: 2rem;
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+  }
+  .adminSubmit {
+    width: 17%;
+    height: 2rem;
+    font-size: 0.7rem;
+  }
+  #popupWrap {
+    width: 70vw;
+    height: 8rem;
+  }
+  #popupMessage {
+    margin-top: 5%;
+  }
+  #popupButton {
+    margin-bottom: 5%;
+  }
+}
+@media (min-width: 440px) {
+  .adminLoginH1 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 725px) {
+  .adminLoginH1 {
+    font-size: 2.5rem;
+  }
+  .adminLoginInput {
+    font-size: 1.5rem;
+    max-width: 20rem;
+    height: 3rem;
+  }
+  .adminSubmit {
+    font-size: 1.5rem;
+    height: 3rem;
+  }
+}
+@media (min-width: 800px) {
+  #popupWrap {
+    height: 9rem;
+    font-size: 1.2rem;
+  }
+  #popupMessage {
+    margin-top: 6%;
+  }
+  #popupButton {
+    margin-bottom: 3%;
+  }
+}
+@media (min-width: 900px) {
+  #popupWrap {
+    height: 10rem;
+  }
+}
+@media (min-width: 1000px) {
+  #popupWrap {
+    height: 11rem;
+  }
+}
+@media (min-width: 1600px) {
+  #popupWrap {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1655px) {
+  .adminLoginWrap {
+    padding-top: 10rem;
+  }
+  .adminLoginH1 {
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+  }
+}

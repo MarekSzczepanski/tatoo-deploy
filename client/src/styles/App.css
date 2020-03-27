@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ccc;
+  overflow-x: hidden;
+}
+.greenBackground {
+  background-color: #4e9b45;
+}
+.redBackground {
+  background-color: #c32222;
+}
+.blueBackground {
+  background-color: royalblue;
+}
+.darkBackground {
+  background-color: #333;
+}
+h1,
+input,
+button,
+li,
+label {
+  font-family: "Roboto Mono", monospace;
+}
+.addNewsButton:hover,
+.deleteNews:hover,
+.adminSubmit:hover {
+  color: yellow;
+  cursor: pointer;
+}
+.insidePageUl {
+  margin: 2vh 0 0 2vh;
+  list-style: none;
+}

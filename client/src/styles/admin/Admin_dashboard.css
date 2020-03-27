@@ -1,0 +1,124 @@
+.adminDashboardLinkWrap {
+  display: flex;
+  justify-content: space-around;
+  margin: 5vh auto 0;
+  list-style: none;
+}
+.adminDashboardLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  text-align: center;
+}
+.adminDashboardLink a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+}
+.adminDashboardLink a:hover,
+.returnLink a:hover {
+  color: yellow;
+}
+.returnLink {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+.returnLink a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (min-width: 320px) {
+  .adminDashboardLinkWrap {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .adminDashboardLink {
+    width: 40%;
+    height: 5rem;
+    margin-bottom: 0.5rem;
+  }
+  .adminDashboardLink a {
+    height: 5rem;
+    line-height: 1.5rem;
+    padding-top: 0.9rem;
+    font-size: 0.9rem;
+    word-spacing: 100vw;
+  }
+  .returnLink {
+    width: 12rem;
+    height: 2rem;
+  }
+  .returnLink a {
+    letter-spacing: 0.1rem;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 400px) {
+  .adminDashboardLinkWrap {
+    width: 90vw;
+  }
+}
+@media (min-width: 520px) {
+  .adminDashboardLink,
+  .adminDashboardLink a {
+    height: 7rem;
+    font-size: 1.1rem;
+  }
+  .adminDashboardLink a {
+    line-height: 2rem;
+    padding-top: 1.4rem;
+  }
+}
+
+@media (min-width: 650px) {
+  .adminDashboardLink a {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 850px) {
+  .adminDashboardLink {
+    width: 30%;
+    height: 6rem;
+  }
+  .adminDashboardLink a {
+    height: 6rem;
+    line-height: 2rem;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 1250px) {
+  .adminDashboardLinkWrap {
+    width: 80vw;
+  }
+  .adminDashboardLink,
+  .adminDashboardLink a {
+    height: 4rem;
+    line-height: 4rem;
+  }
+  .adminDashboardLink a {
+    width: 100%;
+    padding-top: 0;
+    word-spacing: 0;
+  }
+  .returnLink {
+    width: 15rem;
+  }
+  .returnLink a {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1500px) {
+  .adminDashboardLink {
+    max-width: 21rem;
+  }
+}
