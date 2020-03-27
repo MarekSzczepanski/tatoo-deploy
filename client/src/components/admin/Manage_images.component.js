@@ -32,29 +32,34 @@ class ManageImages extends React.Component {
     redBorder.style.backgroundColor = "transparent";
     document.querySelector(".popupRootImages").style.display = "none";
   };
-  changeState = respo => {
+  changeImagesLinksInState = respo => {
     this.setState({
       imagesLinks: respo.reverse()
     });
   };
-  componentDidMount() {
-    console.log("this", this);
-    const boundState = this.changeState.bind(this);
-    const boundDelete = this.deleteImage.bind(this);
-    axios
-      .get("/api/images_list")
-      .then(response => {
-        boundState(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  addListeners = () => {
     const images = document.querySelectorAll(".manageImg");
+    const boundDelete = this.deleteImage.bind(this);
     console.log("images", images);
     images.forEach(image => {
       console.log("im", image);
       image.addEventListener("click", boundDelete);
     });
+  };
+  componentDidMount() {
+    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    const boundAddListeners = this.addListeners.bind(this);
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .then(boundAddListeners)
+      .catch(error => {
+        console.log(error);
+      });
   }
   render() {
     const style = "returnLink darkBackground";

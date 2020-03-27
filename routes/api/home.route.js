@@ -12,15 +12,6 @@ router.route("/images_list").get((req, res) => {
   Images_tatoo.find()
     .then(images => res.json(images))
     .catch(err => res.status(400).json("Error: " + err));
-  /*  const fs = require("fs");
-  const path = req.body.path;
-
-  fs.unlink(path, err => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-  }); */
 });
 
 module.exports = router;
