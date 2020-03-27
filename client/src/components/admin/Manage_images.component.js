@@ -64,19 +64,23 @@ class ManageImages extends React.Component {
   };
   componentDidMount() {}
   render() {
-    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
-      this
-    );
-    const boundAddListeners = this.addListeners.bind(this);
-    axios
-      .get("/api/images_list")
-      .then(response => {
-        boundChangeImagesLinksInState(response.data);
-      })
-      .then(boundAddListeners)
-      .catch(error => {
-        console.log(error);
-      });
+    const images = document.querySelectorAll(".manageImg");
+    const imageLinksInState = this.state.imageLinksInState;
+    if (images.length !== imageLinksInState.length) {
+      const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+        this
+      );
+      const boundAddListeners = this.addListeners.bind(this);
+      axios
+        .get("/api/images_list")
+        .then(response => {
+          boundChangeImagesLinksInState(response.data);
+        })
+        .then(boundAddListeners)
+        .catch(error => {
+          console.log(error);
+        });
+    }
 
     const style = "returnLink darkBackground";
     const state = this.state;
