@@ -62,7 +62,8 @@ class ManageImages extends React.Component {
       image.addEventListener("click", boundDelete);
     });
   };
-  componentDidMount() {
+  componentDidMount() {}
+  render() {
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
@@ -76,8 +77,7 @@ class ManageImages extends React.Component {
       .catch(error => {
         console.log(error);
       });
-  }
-  render() {
+
     const style = "returnLink darkBackground";
     const state = this.state;
     console.log("st", this.state.imagesLinks);
