@@ -2,9 +2,6 @@ import React, { Fragment, useState } from "react";
 import axios from "axios";
 
 class UploadFile extends React.Component {
-  state = {
-    rerenderOnNumberChange: 0
-  };
   handleSubmit = e => {
     e.preventDefault();
     const imageLink = document.querySelector(".imageLinkInput").value;
@@ -13,11 +10,8 @@ class UploadFile extends React.Component {
       .post("/api/manage_image/add_image", {
         link: imageLink
       })
-      .then(
-        this.setState({
-          rerenderOnNumberChange: Math.random()
-        })
-      );
+      .then(console.log(555, this.props))
+      .then(this.props.rerender());
     /* const imageLink = document.querySelector(".imageLinkInput").value;
     console.log(imageLink);
     const newImage = document.createElement("img");

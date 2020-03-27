@@ -13,10 +13,7 @@ class Page extends React.Component {
   state = {
     auth: false
   };
-
   render() {
-    console.log("page props", this.props.isAuthed);
-    console.log("page state", this.state.auth);
     if (this.props.isAuthed && !this.state.auth) {
       this.setState({
         auth: true

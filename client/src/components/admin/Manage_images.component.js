@@ -10,7 +10,13 @@ class ManageImages extends React.Component {
   resp;
   state = {
     imageToDelete: null,
-    imagesLinks: []
+    imagesLinks: [],
+    rerender: 0
+  };
+  rerenderComponent = () => {
+    this.setState({
+      rerender: Math.random()
+    });
   };
   deleteImage = e => {
     this.setState({
@@ -105,7 +111,7 @@ class ManageImages extends React.Component {
         <div className="imageUploadContainer">
           <h1 className="uploadH1">Dodaj zdjęcie</h1>
           <div className="imagesContainer"></div>
-          <UploadFile />
+          <UploadFile rerender={this.state.rerenderComponent} />
         </div>
         <h1 className="deleteImageH1">Kliknij na zdjecie by je usunąć</h1>
         <section
