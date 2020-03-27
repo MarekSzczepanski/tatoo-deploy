@@ -14,6 +14,7 @@ class ManageImages extends React.Component {
     rerender: 0
   };
   rerenderComponent = () => {
+    console.log("yyy");
     this.setState({
       rerender: Math.random()
     });

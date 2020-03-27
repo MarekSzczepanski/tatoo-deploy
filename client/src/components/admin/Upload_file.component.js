@@ -11,7 +11,6 @@ class UploadFile extends React.Component {
       .post("/api/manage_image/add_image", {
         link: imageLink
       })
-      .then(console.log(555, boundThisProps))
       .then(boundThisProps.rerender);
   };
   render() {
