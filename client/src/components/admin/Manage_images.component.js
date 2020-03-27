@@ -7,8 +7,10 @@ import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class ManageImages extends React.Component {
+  resp;
   state = {
-    imageToDelete: null
+    imageToDelete: null,
+    imagesLinks: []
   };
   /*   importAll(r) {
     return r.keys().map(r);
