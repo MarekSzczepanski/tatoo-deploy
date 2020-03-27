@@ -4,7 +4,6 @@ const Images_tatoo = require("../../models/images_tatoo.model");
 
 router.route("/add_image").post((req, res) => {
   const imageSrc = req.body.link;
-  console.log("4444444444444444444", imageSrc);
   const newImage = new Images_tatoo({
     src: imageSrc
   });
