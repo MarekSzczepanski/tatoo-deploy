@@ -29,6 +29,7 @@ class UploadFile extends React.Component {
     newImage.classList.add(".galleryImg"); */
   };
   render() {
+    console.log(this.state.rerenderOnNumberChange);
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit}>
