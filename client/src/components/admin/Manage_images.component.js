@@ -50,7 +50,9 @@ class ManageImages extends React.Component {
         console.log(error);
       });
     const images = document.querySelectorAll(".manageImg");
+    console.log("images", images);
     images.forEach(image => {
+      console.log("im", image);
       image.addEventListener("click", boundDelete);
     });
   }
