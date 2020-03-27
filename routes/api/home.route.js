@@ -8,7 +8,7 @@ router.route("/news_list").get((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-router.route("/images_list").post((req, res) => {
+router.route("/images_list").get((req, res) => {
   Images_tatoo.find()
     .then(images => res.json(images))
     .catch(err => res.status(400).json("Error: " + err));
