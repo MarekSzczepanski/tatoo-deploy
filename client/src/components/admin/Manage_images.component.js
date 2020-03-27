@@ -31,7 +31,7 @@ class ManageImages extends React.Component {
     console.log(99, this.state.imagesLinks[imageToDelete.id.slice(12)]._id);
 
     axios.post(
-      "/api/delete_images/" +
+      "/api/manage_image/" +
         this.state.imagesLinks[imageToDelete.id.slice(12)]._id
     );
   };
