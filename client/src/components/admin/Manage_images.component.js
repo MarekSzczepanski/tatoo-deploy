@@ -100,7 +100,7 @@ class ManageImages extends React.Component {
           className="galleryImg"
           id={"galleryImage" + i}
           key={i}
-          src={hehe[i]}
+          src={hehe[i].src}
           alt="info"
         />
       );
