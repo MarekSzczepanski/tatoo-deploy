@@ -62,9 +62,33 @@ class ManageImages extends React.Component {
       require.context("../../../public/uploads", false, /\.(png|jpe?g|svg)$/)
     ); */
   }
-
+  componentDidMount() {
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        this.resp = response.data;
+        console.log(this.resp);
+        this.setState({
+          imagesLinks: this.resp.reverse()
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   render() {
     const style = "returnLink darkBackground";
+    const renderImages = this.state.imagesLinks.map(function(news, i) {
+      return (
+        <img
+          className="galleryImg"
+          id={"galleryImage" + i}
+          key={i}
+          src={this.state.imagesLinks[i]}
+          alt="info"
+        />
+      );
+    });
     return (
       <>
         <Header />
@@ -93,19 +117,7 @@ class ManageImages extends React.Component {
           style={{ backgroundColor: "#ccc" }}
           id="manageImagesGalleryPageSection"
         >
-          {/* {this.listOfImages.map((image, index) => (
-            <img
-              key={index}
-              className={"galleryImg"}
-              src={
-                "https://upload.wikimedia.org/wikipedia/commons/c/c9/Moon.jpg"
-              }
-              id={"galleryImage" + index}
-              alt={"obrazek"}
-              onClick={this.deleteImage}
-            ></img>
-          ))} */}
-
+          <div className="imagesWrap">{renderImages}</div>
           <div id="popupRoot" className="popupRootImages">
             <div id="popupWrapDelete">
               <p id="popupMessageDelete">
