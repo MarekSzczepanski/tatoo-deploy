@@ -1,23 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Header from "./Header.component";
 import UploadFile from "../../components/admin/Upload_file.component";
-import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
 
 class ManageImages extends React.Component {
-  resp;
   state = {
     imageToDelete: null,
     imagesLinks: [],
     rerender: false
   };
-  rerenderComponent = () => {
-    this.setState({
-      rerender: true
-    });
-  };
+  componentDidMount() {
+    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    const boundAddListeners = this.addListeners.bind(this);
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .then(boundAddListeners)
+      .catch(error => {
+        console.log(error);
+      });
+  }
   deleteImage = e => {
     this.setState({
       imageToDelete: e.target.id
@@ -42,13 +51,6 @@ class ManageImages extends React.Component {
     redBorder.style.backgroundColor = "transparent";
     document.querySelector(".popupRootImages").style.display = "none";
   };
-  changeImagesLinksInState = respo => {
-    console.log("respo", respo);
-    this.setState({
-      imagesLinks: respo.reverse(),
-      rerender: false
-    });
-  };
   addListeners = () => {
     const images = document.querySelectorAll(".galleryImg");
     const boundDelete = this.deleteImage.bind(this);
@@ -58,21 +60,18 @@ class ManageImages extends React.Component {
       image.addEventListener("click", boundDelete);
     });
   };
-  componentDidMount() {
-    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
-      this
-    );
-    const boundAddListeners = this.addListeners.bind(this);
-    axios
-      .get("/api/images_list")
-      .then(response => {
-        boundChangeImagesLinksInState(response.data);
-      })
-      .then(boundAddListeners)
-      .catch(error => {
-        console.log(error);
-      });
-  }
+  changeImagesLinksInState = respo => {
+    console.log("respo", respo);
+    this.setState({
+      imagesLinks: respo.reverse(),
+      rerender: false
+    });
+  };
+  rerenderComponent = () => {
+    this.setState({
+      rerender: true
+    });
+  };
   render() {
     if (this.state.rerender) {
       const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(

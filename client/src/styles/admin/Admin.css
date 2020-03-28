@@ -18,13 +18,15 @@
 .adminSubmit {
   background-color: #60d932;
   border: 1px solid #333;
-  width: 7rem;
+  width: 10rem;
 }
 .adminSubmit a {
   line-height: 3rem;
   list-style-type: none;
+  font-weight: bold;
   text-align: center;
   text-decoration: none;
+  letter-spacing: 1px;
   color: black;
 }
 #popupRoot {
