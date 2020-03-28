@@ -192,7 +192,7 @@ class Gallery extends React.Component {
           className="galleryImg"
           id={"galleryImage" + i}
           key={i}
-          src={}
+          src={state.imagesLinks[i].src}
           alt="info"
         />
       );
@@ -204,7 +204,7 @@ class Gallery extends React.Component {
             <img
               key={index}
               className={"galleryImg"}
-              src={state.imagesLinks[i].src}
+              src={state.imagesLinks[index].src}
               id={"galleryImage" + index}
               alt="info"
             ></img>
