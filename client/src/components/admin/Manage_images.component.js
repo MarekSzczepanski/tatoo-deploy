@@ -11,12 +11,12 @@ class ManageImages extends React.Component {
   state = {
     imageToDelete: null,
     imagesLinks: [],
-    rerender: 0
+    rerender: false
   };
   rerenderComponent = () => {
     console.log("yyy");
     this.setState({
-      rerender: Math.random()
+      rerender: true
     });
   };
   deleteImage = e => {
@@ -50,7 +50,8 @@ class ManageImages extends React.Component {
   };
   changeImagesLinksInState = respo => {
     this.setState({
-      imagesLinks: respo.reverse()
+      imagesLinks: respo.reverse(),
+      rerender: false
     });
   };
   addListeners = () => {
@@ -80,7 +81,7 @@ class ManageImages extends React.Component {
   render() {
     const images = document.querySelectorAll(".manageImg");
     const imagesLinksInState = this.state.imagesLinks;
-    if (images.length !== imagesLinksInState.length) {
+    if (this.state.rerender) {
       const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
         this
       );
