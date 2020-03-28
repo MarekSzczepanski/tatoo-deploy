@@ -85,6 +85,18 @@ class GalleryPage extends React.Component {
     });
   };
   render() {
+    const state = this.state;
+    const renderImages = this.state.imagesLinks.map(function(image, i) {
+      return (
+        <img
+          className="manageImg"
+          id={"galleryImage" + i}
+          key={i}
+          src={state.imagesLinks[i].src}
+          alt="info"
+        />
+      );
+    });
     return (
       <>
         <section className="galleryPageSection">
@@ -96,7 +108,7 @@ class GalleryPage extends React.Component {
             className="galleryPageX"
             onClick={this.xClick}
           />
-          {this.listOfImages.map((image, index) => (
+          {/* {this.listOfImages.map((image, index) => (
             <img
               key={index}
               className={"galleryImg"}
@@ -104,7 +116,7 @@ class GalleryPage extends React.Component {
               id={"galleryImage" + index}
               alt="info"
             ></img>
-          ))}
+          ))} */}
         </section>
         <GalleryPageFooter />
       </>
