@@ -18,8 +18,14 @@
 .adminSubmit {
   background-color: #60d932;
   border: 1px solid #333;
-  width: 8vw;
-  max-width: 10rem;
+  width: 7rem;
+}
+.adminSubmit a {
+  line-height: 3rem;
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  color: black;
 }
 #popupRoot {
   position: fixed;

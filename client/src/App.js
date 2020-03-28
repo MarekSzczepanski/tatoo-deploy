@@ -26,7 +26,6 @@ class App extends React.Component {
     });
   };
   handleSubmit = e => {
-    console.log(5);
     const boundThis = this.changeThis.bind(this);
     if (e) {
       e.preventDefault();

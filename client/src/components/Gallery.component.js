@@ -16,42 +16,7 @@ class Gallery extends React.Component {
     allImages: [],
     imagesLinks: []
   };
-  displayImages = imagesToDisplay => {
-    const allImages = document.querySelectorAll(".galleryImg");
-    console.log("allimages", allImages);
-    const allImagesIds = [];
-    allImages.forEach(image => {
-      allImagesIds.push(image.id.slice(12));
-    });
-    this.setState({
-      allImages: allImagesIds,
-      imagesDisplayed: imagesToDisplay
-    });
-  };
-  changeImagesLinksInState = respo => {
-    console.log("respo", respo);
-    this.setState({
-      imagesLinks: respo.reverse()
-    });
-  };
-  componentWillMount() {
-    /* const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
-      this
-    );
-    axios
-      .get("/api/images_list")
-      .then(response => {
-        boundChangeImagesLinksInState(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    if (window.innerWidth > 1300) {
-      window.addEventListener("scroll", this.showNewsByScrolling);
-    } */
-  }
   componentDidMount() {
-    /* this.displayImages([0, 1, 2, 3, 4]); */
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
@@ -131,6 +96,23 @@ class Gallery extends React.Component {
       });
     }
   }
+  displayImages = imagesToDisplay => {
+    const allImages = document.querySelectorAll(".galleryImg");
+    console.log("allimages", allImages);
+    const allImagesIds = [];
+    allImages.forEach(image => {
+      allImagesIds.push(image.id.slice(12));
+    });
+    this.setState({
+      allImages: allImagesIds,
+      imagesDisplayed: imagesToDisplay
+    });
+  };
+  changeImagesLinksInState = respo => {
+    this.setState({
+      imagesLinks: respo.reverse()
+    });
+  };
   handleChevronClick = e => {
     const hiddenImagesToDisplay = document.querySelectorAll(
       ".hiddenImageToDisplay"
