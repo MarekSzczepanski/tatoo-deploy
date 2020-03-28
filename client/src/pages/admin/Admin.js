@@ -68,6 +68,12 @@ class Admin extends React.Component {
       isErrorHidden: true
     });
   }; */
+  componentDidMount() {
+    document.querySelector(".adminLoginWrap").style.display = "flex";
+  }
+  componentWillUnmount() {
+    document.querySelector(".adminLoginWrap").style.display = "none";
+  }
   render() {
     /*  let isHiddenClass;
     if (!this.state.isErrorHidden) {
@@ -75,7 +81,7 @@ class Admin extends React.Component {
     } else {
       isHiddenClass = "";
     } */
-    document.querySelector(".adminLoginWrap").style.display = "block";
+
     return (
       <>
         <Header />
