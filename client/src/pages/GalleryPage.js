@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import GalleryPageFooter from "../components/GalleryPageFooter.component";
 import { faWindowClose } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class GalleryPage extends React.Component {
+  state = {
+    imagesLinks: []
+  };
   listOfImages;
-  importAll(r) {
-    return r.keys().map(r);
-  }
   handleImageClick = e => {
     const images = document.querySelectorAll("img");
     const xButton = document.querySelector(".galleryPageX");
@@ -51,12 +52,20 @@ class GalleryPage extends React.Component {
     document.querySelector(".galleryPageSection").style.height = "auto";
     document.querySelector(".galleryPageX").style.display = "none";
   };
-  componentWillMount() {
-    this.listOfImages = this.importAll(
-      require.context("../../public/uploads", false, /\.(png|jpe?g|svg)$/)
-    );
-  }
+  componentWillMount() {}
   componentDidMount() {
+    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
     if (window.innerWidth > 1023) {
       const images = document.querySelector(".galleryPageSection").childNodes;
       images.forEach(image => {
@@ -69,6 +78,12 @@ class GalleryPage extends React.Component {
       });
     }
   }
+
+  changeImagesLinksInState = respo => {
+    this.setState({
+      imagesLinks: respo.reverse()
+    });
+  };
   render() {
     return (
       <>
