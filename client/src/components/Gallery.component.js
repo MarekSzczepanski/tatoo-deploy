@@ -35,7 +35,7 @@ class Gallery extends React.Component {
     });
   };
   componentWillMount() {
-    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+    /* const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
     axios
@@ -48,7 +48,7 @@ class Gallery extends React.Component {
       });
     if (window.innerWidth > 1300) {
       window.addEventListener("scroll", this.showNewsByScrolling);
-    }
+    } */
   }
   componentDidMount() {
     /* this.displayImages([0, 1, 2, 3, 4]); */
@@ -209,7 +209,7 @@ class Gallery extends React.Component {
         }
       });
     }
-    if (this.state.allImages[1]) {
+    if (this.state.imagesLinks[1]) {
       this.displayImages([0, 1, 2, 3, 4]);
     }
 
