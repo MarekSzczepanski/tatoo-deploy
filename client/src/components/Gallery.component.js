@@ -192,14 +192,24 @@ class Gallery extends React.Component {
           className="galleryImg"
           id={"galleryImage" + i}
           key={i}
-          src={state.imagesLinks[i].src}
+          src={}
           alt="info"
         />
       );
     });
     return (
       <section className="gallerySection">
-        <div className="imagesWrap">{renderImages}</div>
+        <div className="imagesWrap">
+          {this.listOfImages.map((image, index) => (
+            <img
+              key={index}
+              className={"galleryImg"}
+              src={state.imagesLinks[i].src}
+              id={"galleryImage" + index}
+              alt="info"
+            ></img>
+          ))}
+        </div>
         <FontAwesomeIcon
           icon={faChevronLeft}
           className="galleryChevronLeft"
