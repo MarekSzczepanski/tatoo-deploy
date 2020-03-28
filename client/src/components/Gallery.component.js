@@ -212,7 +212,7 @@ class Gallery extends React.Component {
         console.log(error);
       });
 
-    if (this.state.allImages) {
+    if (this.state.allImages[1]) {
       const allImages = document.querySelectorAll(".galleryImg");
       allImages.forEach(image => {
         if (image.style.display === "block") {
