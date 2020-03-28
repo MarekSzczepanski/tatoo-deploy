@@ -231,7 +231,9 @@ class Gallery extends React.Component {
     });
     return (
       <section className="gallerySection">
-        <div className="imagesWrap">{renderImages}</div>
+        <div className="imagesWrap">
+          {state.imagesLinks ? renderImages : null}
+        </div>
         <FontAwesomeIcon
           icon={faChevronLeft}
           className="galleryChevronLeft"
