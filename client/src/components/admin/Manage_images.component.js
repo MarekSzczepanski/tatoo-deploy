@@ -97,7 +97,7 @@ class ManageImages extends React.Component {
     const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
         <img
-          className="manageImg"
+          className="galleryImg"
           id={"galleryImage" + i}
           key={i}
           src={state.imagesLinks[i].src}
