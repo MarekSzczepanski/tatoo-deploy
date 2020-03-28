@@ -68,6 +68,7 @@ class Gallery extends React.Component {
     } */
   }
   componentDidUpdate() {
+    console.log("update");
     const leftChevron = document.querySelector(".galleryChevronLeft");
     const rightChevron = document.querySelector(".galleryChevronRight");
     leftChevron.style.opacity = 1;
@@ -198,7 +199,7 @@ class Gallery extends React.Component {
   };
   render() {
     let areImagesDisplayed = false;
-
+    console.log("state", this.state.allImages);
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
