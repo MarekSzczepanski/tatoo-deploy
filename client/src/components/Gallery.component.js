@@ -35,32 +35,6 @@ class Gallery extends React.Component {
     });
   };
   componentWillMount() {
-    /* axios
-      .get("/api/images_list")
-      .then(response => {
-        this.resp = response.data;
-        console.log(this.resp);
-        this.setState({
-          imagesLinks: this.resp.reverse()
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      }); */
-  }
-  componentDidMount() {
-    /* const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
-      this
-    );
-    axios
-      .get("/api/images_list")
-      .then(response => {
-        boundChangeImagesLinksInState(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      }); */
-    this.displayImages([0, 1, 2, 3, 4]);
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
@@ -75,6 +49,23 @@ class Gallery extends React.Component {
     if (window.innerWidth > 1300) {
       window.addEventListener("scroll", this.showNewsByScrolling);
     }
+  }
+  componentDidMount() {
+    /* this.displayImages([0, 1, 2, 3, 4]); */
+    /* const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    if (window.innerWidth > 1300) {
+      window.addEventListener("scroll", this.showNewsByScrolling);
+    } */
   }
   componentDidUpdate() {
     const leftChevron = document.querySelector(".galleryChevronLeft");
@@ -207,17 +198,33 @@ class Gallery extends React.Component {
   };
   render() {
     let areImagesDisplayed = false;
-    const allImages = document.querySelectorAll(".galleryImg");
-    console.log("all", allImages);
-    console.log("links", this.state.imagesLinks);
-    allImages.forEach(image => {
-      if (image.style.display === "block") {
-        areImagesDisplayed = true;
+
+    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    const boundAddListeners = this.addListeners.bind(this);
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .then(boundAddListeners)
+      .catch(error => {
+        console.log(error);
+      });
+
+    if (this.state.allImages) {
+      const allImages = document.querySelectorAll(".galleryImg");
+      allImages.forEach(image => {
+        if (image.style.display === "block") {
+          areImagesDisplayed = true;
+        }
+      });
+      if (!areImagesDisplayed) {
+        this.displayImages([0, 1, 2, 3, 4]);
       }
-    });
-    if (!areImagesDisplayed) {
-      this.displayImages([0, 1, 2, 3, 4]);
     }
+
     const state = this.state;
     const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
