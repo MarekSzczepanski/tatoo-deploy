@@ -206,6 +206,7 @@ class Gallery extends React.Component {
   render() {
     let areImagesDisplayed = false;
     const allImages = document.querySelectorAll(".galleryImg");
+    console.log("all", allImages);
     allImages.forEach(image => {
       if (image.style.display === "block") {
         areImagesDisplayed = true;
