@@ -16,9 +16,6 @@ class Gallery extends React.Component {
     allImages: [],
     imagesLinks: []
   };
-  /*   importAll(r) {
-    return r.keys().map(r);
-  } */
   displayImages = imagesToDisplay => {
     const allImages = document.querySelectorAll(".galleryImg");
     const allImagesIds = [];
@@ -30,11 +27,6 @@ class Gallery extends React.Component {
       imagesDisplayed: imagesToDisplay
     });
   };
-  componentWillMount() {
-    /* this.listOfImages = this.importAll(
-      require.context("../../public/uploads", false, /\.(png|jpe?g|svg)$/)
-    ); */
-  }
   componentDidMount() {
     axios
       .get("/api/images_list")
@@ -182,7 +174,6 @@ class Gallery extends React.Component {
     }
   };
   render() {
-    console.log("imagesLinks", this.state.imagesLinks);
     let areImagesDisplayed = false;
     const allImages = document.querySelectorAll(".galleryImg");
     allImages.forEach(image => {
@@ -193,13 +184,14 @@ class Gallery extends React.Component {
     if (!areImagesDisplayed) {
       this.displayImages([0, 1, 2, 3, 4]);
     }
-    const renderImages = this.state.imagesLinks.map(function(news, i) {
+    const state = this.state;
+    const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
         <img
           className="galleryImg"
           id={"galleryImage" + i}
           key={i}
-          src={this.state.imagesLinks[i]}
+          src={state.imagesLinks[i].src}
           alt="info"
         />
       );
