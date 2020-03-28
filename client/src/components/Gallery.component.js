@@ -52,7 +52,7 @@ class Gallery extends React.Component {
   }
   componentDidMount() {
     /* this.displayImages([0, 1, 2, 3, 4]); */
-    /* const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
     axios
@@ -65,7 +65,7 @@ class Gallery extends React.Component {
       });
     if (window.innerWidth > 1300) {
       window.addEventListener("scroll", this.showNewsByScrolling);
-    } */
+    }
   }
   componentDidUpdate() {
     console.log("update");
@@ -200,17 +200,6 @@ class Gallery extends React.Component {
   render() {
     let areImagesDisplayed = false;
     console.log("state", this.state.allImages);
-    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
-      this
-    );
-    axios
-      .get("/api/images_list")
-      .then(response => {
-        boundChangeImagesLinksInState(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
 
     if (this.state.allImages[1]) {
       const allImages = document.querySelectorAll(".galleryImg");
