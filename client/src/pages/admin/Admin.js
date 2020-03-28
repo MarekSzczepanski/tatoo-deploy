@@ -75,7 +75,7 @@ class Admin extends React.Component {
     } else {
       isHiddenClass = "";
     } */
-
+    document.querySelector(".adminLoginWrap").style.display = "block";
     return (
       <>
         <Header />

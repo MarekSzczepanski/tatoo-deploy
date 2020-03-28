@@ -102,7 +102,7 @@ class App extends React.Component {
           <div className="app">
             <Page isAuthed={a} />
           </div>
-          <div className="adminLoginWrap">
+          <div className="adminLoginWrap" style={{ display: "none" }}>
             <h1 className="adminLoginH1">Podaj dane logowania</h1>
             <form onSubmit={this.handleSubmit} className="adminLoginForm">
               <input
