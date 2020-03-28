@@ -45,8 +45,6 @@ class Gallery extends React.Component {
       .catch(error => {
         console.log(error);
       }); */
-  }
-  componentDidMount() {
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
@@ -58,6 +56,19 @@ class Gallery extends React.Component {
       .catch(error => {
         console.log(error);
       });
+  }
+  componentDidMount() {
+    /* const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      }); */
     this.displayImages([0, 1, 2, 3, 4]);
     if (window.innerWidth > 1300) {
       window.addEventListener("scroll", this.showNewsByScrolling);
