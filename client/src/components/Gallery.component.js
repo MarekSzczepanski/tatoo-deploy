@@ -27,8 +27,7 @@ class Gallery extends React.Component {
       imagesDisplayed: imagesToDisplay
     });
   };
-  componentDidMount() {
-    this.displayImages([0, 1, 2, 3, 4]);
+  componentWillMount() {
     axios
       .get("/api/images_list")
       .then(response => {
@@ -41,6 +40,9 @@ class Gallery extends React.Component {
       .catch(error => {
         console.log(error);
       });
+  }
+  componentDidMount() {
+    this.displayImages([0, 1, 2, 3, 4]);
     if (window.innerWidth > 1300) {
       window.addEventListener("scroll", this.showNewsByScrolling);
     }
@@ -189,7 +191,7 @@ class Gallery extends React.Component {
     const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
         <img
-          className="galleryImg"
+          className="manageImg"
           id={"galleryImage" + i}
           key={i}
           src={state.imagesLinks[i].src}
@@ -199,17 +201,7 @@ class Gallery extends React.Component {
     });
     return (
       <section className="gallerySection">
-        <div className="imagesWrap">
-          {this.listOfImages.map((image, index) => (
-            <img
-              key={index}
-              className={"galleryImg"}
-              src={state.imagesLinks[index].src}
-              id={"galleryImage" + index}
-              alt="info"
-            ></img>
-          ))}
-        </div>
+        <div className="imagesWrap">{renderImages}</div>
         <FontAwesomeIcon
           icon={faChevronLeft}
           className="galleryChevronLeft"
