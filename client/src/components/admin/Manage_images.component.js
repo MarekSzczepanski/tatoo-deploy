@@ -50,7 +50,7 @@ class ManageImages extends React.Component {
     });
   };
   addListeners = () => {
-    const images = document.querySelectorAll(".manageImg");
+    const images = document.querySelectorAll(".galleryImg");
     const boundDelete = this.deleteImage.bind(this);
     console.log("images", images);
     images.forEach(image => {
@@ -74,13 +74,12 @@ class ManageImages extends React.Component {
       });
   }
   render() {
-    const images = document.querySelectorAll(".manageImg");
-    const imagesLinksInState = this.state.imagesLinks;
     if (this.state.rerender) {
       const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
         this
       );
       const boundAddListeners = this.addListeners.bind(this);
+
       axios
         .get("/api/images_list")
         .then(response => {

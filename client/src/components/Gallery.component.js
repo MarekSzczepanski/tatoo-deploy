@@ -198,21 +198,9 @@ class Gallery extends React.Component {
     }
   };
   render() {
-    let areImagesDisplayed = false;
-    console.log("state", this.state.allImages);
-
-    if (this.state.allImages[1]) {
-      const allImages = document.querySelectorAll(".galleryImg");
-      allImages.forEach(image => {
-        if (image.style.display === "block") {
-          areImagesDisplayed = true;
-        }
-      });
-    }
     if (this.state.imagesLinks[1] && !this.state.allImages[1]) {
       this.displayImages([0, 1, 2, 3, 4]);
     }
-
     const state = this.state;
     const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
