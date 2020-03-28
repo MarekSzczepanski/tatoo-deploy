@@ -62,7 +62,21 @@ class ManageImages extends React.Component {
       image.addEventListener("click", boundDelete);
     });
   };
-  componentDidMount() {}
+  componentDidMount() {
+    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    const boundAddListeners = this.addListeners.bind(this);
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .then(boundAddListeners)
+      .catch(error => {
+        console.log(error);
+      });
+  }
   render() {
     const images = document.querySelectorAll(".manageImg");
     const imagesLinksInState = this.state.imagesLinks;
