@@ -64,7 +64,7 @@ class Gallery extends React.Component {
     }
   }
   componentDidUpdate() {
-    const leftChevron = document.querySelector(".galleryChevronLeft");
+    /* const leftChevron = document.querySelector(".galleryChevronLeft");
     const rightChevron = document.querySelector(".galleryChevronRight");
     leftChevron.style.opacity = 1;
     rightChevron.style.opacity = 1;
@@ -124,7 +124,7 @@ class Gallery extends React.Component {
       imagesToDisplay.forEach(image => {
         image.style.display = "block";
       });
-    }
+    } */
   }
   /* handleChevronClick = e => {
     const hiddenImagesToDisplay = document.querySelectorAll(
