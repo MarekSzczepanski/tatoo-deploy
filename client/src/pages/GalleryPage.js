@@ -117,6 +117,7 @@ class GalleryPage extends React.Component {
               alt="info"
             ></img>
           ))} */}
+          {renderImages}
         </section>
         <GalleryPageFooter />
       </>
