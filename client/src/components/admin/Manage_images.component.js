@@ -43,6 +43,7 @@ class ManageImages extends React.Component {
     document.querySelector(".popupRootImages").style.display = "none";
   };
   changeImagesLinksInState = respo => {
+    console.log("respo", respo);
     this.setState({
       imagesLinks: respo.reverse(),
       rerender: false
@@ -68,7 +69,6 @@ class ManageImages extends React.Component {
         boundChangeImagesLinksInState(response.data);
       })
       .then(boundAddListeners)
-      .then(response => console.log("man1", response.data))
       .catch(error => {
         console.log(error);
       });
@@ -87,7 +87,6 @@ class ManageImages extends React.Component {
           boundChangeImagesLinksInState(response.data);
         })
         .then(boundAddListeners)
-        .then(response => console.log("man2", response.data))
         .catch(error => {
           console.log(error);
         });
