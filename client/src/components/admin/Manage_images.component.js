@@ -65,8 +65,8 @@ class ManageImages extends React.Component {
   componentDidMount() {}
   render() {
     const images = document.querySelectorAll(".manageImg");
-    const imageLinksInState = this.state.imageLinksInState;
-    if (images.length !== imageLinksInState.length) {
+    const imagesLinksInState = this.state.imagesLinks;
+    if (images.length !== imagesLinksInState.length) {
       const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
         this
       );
