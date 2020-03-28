@@ -208,9 +208,9 @@ class Gallery extends React.Component {
           areImagesDisplayed = true;
         }
       });
-      if (!areImagesDisplayed) {
-        this.displayImages([0, 1, 2, 3, 4]);
-      }
+    }
+    if (!this.state.allImages[1]) {
+      this.displayImages([0, 1, 2, 3, 4]);
     }
 
     const state = this.state;
