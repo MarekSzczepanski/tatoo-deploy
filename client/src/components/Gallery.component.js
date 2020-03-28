@@ -209,7 +209,7 @@ class Gallery extends React.Component {
         }
       });
     }
-    if (this.state.imagesLinks[1]) {
+    if (this.state.imagesLinks[1] && !this.state.allImages[1]) {
       this.displayImages([0, 1, 2, 3, 4]);
     }
 
