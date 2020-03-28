@@ -95,12 +95,12 @@ class Gallery extends React.Component {
         );
       }
     } else {
-      console.log("rrR", this.state.imagesDisplayed);
       for (
         let i = this.state.imagesDisplayed[0];
         i < this.state.imagesDisplayed.length;
         i++
       ) {
+        console.log("rrR", this.state.imagesDisplayed[i]);
         document
           .getElementById("galleryImage" + this.state.imagesDisplayed[i])
           .classList.add("visible");
