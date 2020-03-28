@@ -18,6 +18,7 @@ class Gallery extends React.Component {
   };
   displayImages = imagesToDisplay => {
     const allImages = document.querySelectorAll(".galleryImg");
+    console.log("allimages", allImages);
     const allImagesIds = [];
     allImages.forEach(image => {
       allImagesIds.push(image.id.slice(12));
@@ -76,68 +77,66 @@ class Gallery extends React.Component {
     }
   }
   componentDidUpdate() {
-    if (document.querySelector("#galleryImage")) {
-      const leftChevron = document.querySelector(".galleryChevronLeft");
-      const rightChevron = document.querySelector(".galleryChevronRight");
-      leftChevron.style.opacity = 1;
-      rightChevron.style.opacity = 1;
-      if (
-        this.state.allImages[0] == this.state.imagesDisplayed[0] ||
-        this.state.allImages[0] ==
-          this.state.imagesDisplayed[this.state.imagesDisplayed.length - 1]
-      ) {
-        leftChevron.style.opacity = 0.3;
-      } else if (
-        this.state.allImages[this.state.allImages.length - 1] ==
+    const leftChevron = document.querySelector(".galleryChevronLeft");
+    const rightChevron = document.querySelector(".galleryChevronRight");
+    leftChevron.style.opacity = 1;
+    rightChevron.style.opacity = 1;
+    if (
+      this.state.allImages[0] == this.state.imagesDisplayed[0] ||
+      this.state.allImages[0] ==
         this.state.imagesDisplayed[this.state.imagesDisplayed.length - 1]
-      ) {
-        rightChevron.style.opacity = 0.3;
-      }
-      const imagesToDisplay = document.querySelectorAll(".visible");
-      if (document.querySelector(".hiddenImageToDisplay")) {
-        imagesToDisplay.forEach(image => {
-          image.classList.remove("visible");
-          image.style.display = "none";
-        });
-        const hiddenImagesToDisplay = document.querySelectorAll(
-          ".hiddenImageToDisplay"
+    ) {
+      leftChevron.style.opacity = 0.3;
+    } else if (
+      this.state.allImages[this.state.allImages.length - 1] ==
+      this.state.imagesDisplayed[this.state.imagesDisplayed.length - 1]
+    ) {
+      rightChevron.style.opacity = 0.3;
+    }
+    const imagesToDisplay = document.querySelectorAll(".visible");
+    if (document.querySelector(".hiddenImageToDisplay")) {
+      imagesToDisplay.forEach(image => {
+        image.classList.remove("visible");
+        image.style.display = "none";
+      });
+      const hiddenImagesToDisplay = document.querySelectorAll(
+        ".hiddenImageToDisplay"
+      );
+      const tl = gsap.timeline();
+      hiddenImagesToDisplay.forEach(image => {
+        image.style.display = "block";
+        image.classList.add("visible");
+      });
+      if (this.state.eTarget === "right") {
+        tl.fromTo(
+          [hiddenImagesToDisplay],
+          0.2,
+          { x: "100vw" },
+          { x: 0, ease: "Expo.EaseOut", stagger: 0.1, delay: 0.2 }
         );
-        const tl = gsap.timeline();
-        hiddenImagesToDisplay.forEach(image => {
-          image.style.display = "block";
-          image.classList.add("visible");
-        });
-        if (this.state.eTarget === "right") {
-          tl.fromTo(
-            [hiddenImagesToDisplay],
-            0.2,
-            { x: "100vw" },
-            { x: 0, ease: "Expo.EaseOut", stagger: 0.1, delay: 0.2 }
-          );
-        } else {
-          const hiddenImagesToDisplayArray = Array.from(hiddenImagesToDisplay);
-          tl.fromTo(
-            [hiddenImagesToDisplayArray.reverse()],
-            0.2,
-            { x: "-100vw" },
-            { x: 0, ease: "Expo.EaseOut", stagger: 0.1, delay: 0.2 }
-          );
-        }
       } else {
-        for (
-          let i = this.state.imagesDisplayed[0];
-          i < this.state.imagesDisplayed.length;
-          i++
-        ) {
-          console.log("rrR", "galleryImage" + this.state.imagesDisplayed[i]);
-          document
-            .getElementById("galleryImage" + this.state.imagesDisplayed[i])
-            .classList.add("visible");
-        }
-        imagesToDisplay.forEach(image => {
-          image.style.display = "block";
-        });
+        const hiddenImagesToDisplayArray = Array.from(hiddenImagesToDisplay);
+        tl.fromTo(
+          [hiddenImagesToDisplayArray.reverse()],
+          0.2,
+          { x: "-100vw" },
+          { x: 0, ease: "Expo.EaseOut", stagger: 0.1, delay: 0.2 }
+        );
       }
+    } else {
+      for (
+        let i = this.state.imagesDisplayed[0];
+        i < this.state.imagesDisplayed.length;
+        i++
+      ) {
+        console.log("rrR", "galleryImage" + this.state.imagesDisplayed[i]);
+        document
+          .getElementById("galleryImage" + this.state.imagesDisplayed[i])
+          .classList.add("visible");
+      }
+      imagesToDisplay.forEach(image => {
+        image.style.display = "block";
+      });
     }
   }
   handleChevronClick = e => {
