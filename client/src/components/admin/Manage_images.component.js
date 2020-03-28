@@ -32,11 +32,6 @@ class ManageImages extends React.Component {
     const imageToDelete = document.getElementById(this.state.imageToDelete);
     imageToDelete.remove();
     document.querySelector(".popupRootImages").style.display = "none";
-    console.log(55, this.state.imagesLinks);
-    console.log(66, this.state.imagesLinks[0]._id);
-    console.log(77, imageToDelete.id.slice(12));
-    console.log(99, this.state.imagesLinks[imageToDelete.id.slice(12)]._id);
-
     axios.post(
       "/api/manage_image/" +
         this.state.imagesLinks[imageToDelete.id.slice(12)]._id
