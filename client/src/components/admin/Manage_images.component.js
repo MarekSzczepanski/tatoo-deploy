@@ -130,7 +130,7 @@ class ManageImages extends React.Component {
         <section
           className="galleryPageSection"
           style={{ backgroundColor: "#ccc" }}
-          id="manageImagesGalleryPageSection"
+          id="galleryPageSection"
         >
           <div className="imagesWrap">{renderImages}</div>
           <div id="popupRoot" className="popupRootImages">

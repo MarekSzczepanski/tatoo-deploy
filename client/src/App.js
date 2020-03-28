@@ -1,11 +1,8 @@
 import React from "react";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Link } from "react-router-dom";
 import Page from "./components/Page.component";
 import "./styles/App.css";
 import axios from "axios";
-
-import { Link } from "react-router-dom";
-
 class App extends React.Component {
   state = {
     auth: false,
@@ -13,12 +10,6 @@ class App extends React.Component {
     password: "",
     isErrorHidden: false
   };
-
-  /* componentWillMount() {
-    axios.post("http://localhost:5000/api/admin_dashboard/auth", {
-      auth: true
-    });
-  } */
   componentDidUpdate() {
     if (this.state.isErrorHidden) {
       document.getElementById("popupRoot").classList.add("popupHidden");
@@ -55,21 +46,6 @@ class App extends React.Component {
       .then(function(response) {
         if (response.data === "ok") {
           boundThis();
-          /* DAC FORMULARZ I PRZYCISK DO PAGE, DAC IM POSITION ABSOLUTE I DISPLAY BLOCK GDY
-          WINDOW LOCATION = /ADMIN I WTEDY MOZNA ZMIENIC STATE W PAGE BEZ POSTA W AXIOSIE */
-          /* axios
-            .post("http://localhost:5000/api/admin_dashboard/auth", {
-              auth: true
-            })
-            .then(() => {
-              window.location = "/admin_dashboard";
-            }); */
-          /* window.location = "/admin_dashboard"; */
-          /*  renderRedirect = () => {
-            if (this.state.redirect) {
-              return 
-            }
-          } */
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");
           popupHiddenClass.forEach(item => {
@@ -88,8 +64,7 @@ class App extends React.Component {
     });
   };
   render() {
-    console.log("app state", this.state.auth);
-    const a = this.state.auth;
+    const state = this.state;
     let isHiddenClass;
     if (!this.state.isErrorHidden) {
       isHiddenClass = "popupHidden";
@@ -100,7 +75,7 @@ class App extends React.Component {
       <>
         <HashRouter>
           <div className="app">
-            <Page isAuthed={a} />
+            <Page isAuthed={state.auth} />
           </div>
           <div className="adminLoginWrap" style={{ display: "none" }}>
             <h1 className="adminLoginH1">Podaj dane logowania</h1>
@@ -119,11 +94,10 @@ class App extends React.Component {
                 className="adminLoginInput"
               ></input>
               <ul>
-                <li onClick={this.handleSubmit}>
+                <li onClick={this.handleSubmit} className="adminSubmit">
                   <Link to="/admin_dashboard">zo</Link>
                 </li>
               </ul>
-              {/* <button className="adminSubmit">zaloguj</button> */}
             </form>
           </div>
           <div id="popupRoot" className={isHiddenClass}>
