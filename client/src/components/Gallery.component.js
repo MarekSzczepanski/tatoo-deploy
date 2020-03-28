@@ -53,6 +53,7 @@ class Gallery extends React.Component {
       .then(response => {
         boundChangeImagesLinksInState(response.data);
       })
+      .then(response => console.log("gal", response.data))
       .catch(error => {
         console.log(error);
       });

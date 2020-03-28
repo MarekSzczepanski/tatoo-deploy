@@ -68,6 +68,7 @@ class ManageImages extends React.Component {
         boundChangeImagesLinksInState(response.data);
       })
       .then(boundAddListeners)
+      .then(response => console.log("man1", response.data))
       .catch(error => {
         console.log(error);
       });
@@ -86,6 +87,7 @@ class ManageImages extends React.Component {
           boundChangeImagesLinksInState(response.data);
         })
         .then(boundAddListeners)
+        .then(response => console.log("man2", response.data))
         .catch(error => {
           console.log(error);
         });
