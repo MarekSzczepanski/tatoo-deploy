@@ -25,12 +25,6 @@ class App extends React.Component {
       password: e.target.value
     });
   };
-  changeThis = () => {
-    console.log(2);
-    this.setState({
-      auth: true
-    });
-  };
   handleSubmit = e => {
     console.log(5);
     const boundThis = this.changeThis.bind(this);
@@ -61,6 +55,11 @@ class App extends React.Component {
   handleErrorButtonClick = e => {
     this.setState({
       isErrorHidden: true
+    });
+  };
+  changeThis = () => {
+    this.setState({
+      auth: true
     });
   };
   render() {
@@ -95,7 +94,7 @@ class App extends React.Component {
               ></input>
               <ul>
                 <li onClick={this.handleSubmit} className="adminSubmit">
-                  <Link to="/admin_dashboard">zo</Link>
+                  <Link to="/admin_dashboard">zatwierdź</Link>
                 </li>
               </ul>
             </form>

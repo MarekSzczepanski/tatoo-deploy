@@ -18,6 +18,7 @@
 .adminSubmit {
   background-color: #60d932;
   border: 1px solid #333;
+  width: 8vw;
   max-width: 10rem;
 }
 #popupRoot {
