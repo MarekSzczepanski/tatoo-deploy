@@ -28,6 +28,7 @@ class Gallery extends React.Component {
     });
   };
   componentDidMount() {
+    this.displayImages([0, 1, 2, 3, 4]);
     axios
       .get("/api/images_list")
       .then(response => {
@@ -43,7 +44,6 @@ class Gallery extends React.Component {
     if (window.innerWidth > 1300) {
       window.addEventListener("scroll", this.showNewsByScrolling);
     }
-    this.displayImages([0, 1, 2, 3, 4]);
   }
   componentDidUpdate() {
     const leftChevron = document.querySelector(".galleryChevronLeft");
@@ -93,6 +93,7 @@ class Gallery extends React.Component {
         );
       }
     } else {
+      console.log("rrR", this.state.imagesDisplayed);
       for (
         let i = this.state.imagesDisplayed[0];
         i < this.state.imagesDisplayed.length;
