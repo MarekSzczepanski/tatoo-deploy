@@ -14,7 +14,6 @@ class ManageImages extends React.Component {
     rerender: false
   };
   rerenderComponent = () => {
-    console.log("yyy");
     this.setState({
       rerender: true
     });

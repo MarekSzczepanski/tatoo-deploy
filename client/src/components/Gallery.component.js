@@ -126,7 +126,7 @@ class Gallery extends React.Component {
       });
     }
   }
-  handleChevronClick = e => {
+  /* handleChevronClick = e => {
     const hiddenImagesToDisplay = document.querySelectorAll(
       ".hiddenImageToDisplay"
     );
@@ -191,7 +191,7 @@ class Gallery extends React.Component {
           .classList.add("visible");
       }
     }
-  };
+  }; */
   render() {
     let areImagesDisplayed = false;
     const allImages = document.querySelectorAll(".galleryImg");
