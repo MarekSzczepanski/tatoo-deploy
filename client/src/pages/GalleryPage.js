@@ -10,7 +10,6 @@ class GalleryPage extends React.Component {
   };
 
   componentDidMount() {
-    this.addListeners();
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
@@ -34,6 +33,9 @@ class GalleryPage extends React.Component {
         image.style.display = "none";
       });
     } */
+  }
+  componentDidUpdate() {
+    this.addListeners();
   }
   componentWillUnmount() {
     const images = document.querySelector(".galleryPageSection").childNodes;
