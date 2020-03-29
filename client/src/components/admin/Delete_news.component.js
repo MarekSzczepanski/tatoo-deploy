@@ -55,8 +55,6 @@ class DeleteNews extends React.Component {
     axios
       .get("/api/news_list")
       .then(response => {
-        console.log("state", this.state.newsList.length);
-        console.log("resp", response.data.length);
         if (this.state.newsList.length === response.data.length) {
           // check if database has refreshed
           boundUpdateNewsList(); // do news list update again if it didn't (new get request)

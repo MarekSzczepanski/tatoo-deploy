@@ -12,7 +12,6 @@ class News extends React.Component {
       .get("/api/news_list")
       .then(response => {
         this.resp = response.data;
-        console.log(this.resp);
         this.setState({
           newsList: this.resp.reverse()
         });
