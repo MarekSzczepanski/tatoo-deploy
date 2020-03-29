@@ -35,6 +35,12 @@ class GalleryPage extends React.Component {
       });
     } */
   }
+  componentWillUnmount() {
+    const images = document.querySelector(".galleryPageSection").childNodes;
+    images.forEach(image => {
+      image.removeEventListener("click", this.handleImageClick);
+    });
+  }
   handleImageClick = e => {
     console.log(e.target);
     const images = document.querySelectorAll(".galleryImg");

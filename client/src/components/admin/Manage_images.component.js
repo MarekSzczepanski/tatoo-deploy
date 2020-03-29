@@ -27,6 +27,12 @@ class ManageImages extends React.Component {
         console.log(error);
       });
   }
+  componentWillUnmount() {
+    const images = document.querySelector(".galleryPageSection").childNodes;
+    images.forEach(image => {
+      image.removeEventListener("click", this.deleteImage);
+    });
+  }
   deleteImage = e => {
     this.setState({
       imageToDelete: e.target.id
