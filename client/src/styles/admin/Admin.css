@@ -85,6 +85,7 @@
   .adminSubmit {
     height: 2rem;
     font-size: 0.8rem;
+    margin-bottom: 0.5rem;
   }
   .adminSubmit a {
     line-height: 2rem;
