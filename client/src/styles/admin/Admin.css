@@ -16,13 +16,13 @@
   text-align: center;
 }
 .adminSubmit {
-  background-color: #60d932;
-  border: 1px solid #333;
   width: 10rem;
+  border: 1px solid #333;
+  background-color: #60d932;
+  list-style-type: none;
 }
 .adminSubmit a {
   display: block;
-  list-style-type: none;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
