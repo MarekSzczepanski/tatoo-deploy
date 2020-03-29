@@ -92,11 +92,11 @@ class ManageImages extends React.Component {
     const renderImages = this.state.imagesLinks.map(function(image, i) {
       return (
         <img
+          key={i}
           className="galleryImg"
           id={"galleryImage" + i}
-          key={i}
           src={state.imagesLinks[i].src}
-          alt="info"
+          alt="obrazek"
         />
       );
     });
@@ -128,7 +128,7 @@ class ManageImages extends React.Component {
           style={{ backgroundColor: "#ccc" }}
           id="galleryPageSection"
         >
-          <div className="imagesWrap">{renderImages}</div>
+          {renderImages}
           <div id="popupRoot" className="popupRootImages">
             <div id="popupWrapDelete">
               <p id="popupMessageDelete">

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import axios from "axios";
 
 class UploadFile extends React.Component {
@@ -6,7 +6,6 @@ class UploadFile extends React.Component {
     e.preventDefault();
     const boundThisProps = this.props;
     const imageLink = document.querySelector(".imageLinkInput").value;
-    console.log(imageLink);
     axios
       .post("/api/manage_image/add_image", {
         link: imageLink
@@ -15,22 +14,29 @@ class UploadFile extends React.Component {
   };
   render() {
     return (
-      <Fragment>
+      <>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" className="imageLinkInput"></input>
+          <input
+            type="text"
+            value="wklej link do zdjęcia"
+            className="imageLinkInput"
+            style={{
+              width: "80vw",
+              height: "3rem",
+              marginTop: "1.5rem",
+              fontSize: "1.3rem"
+            }}
+          ></input>
         </form>
         <form className="uploadForm">
           <input type="file" className="uploadBrowseInput" id="customFile" />
-          <label className="uploadBrowseLabel" htmlFor="customFile">
-            wybierz zdjęcie
-          </label>
           <input
             type="submit"
             value="załaduj zdjęcie"
             className="uploadInput"
           />
         </form>
-      </Fragment>
+      </>
     );
   }
 }
