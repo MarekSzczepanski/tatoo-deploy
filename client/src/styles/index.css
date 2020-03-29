@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+.app {
+  max-width: 100vw;
+}
 @import url("https://fonts.googleapis.com/css?family=Anton|Lato:700|Roboto:700|Kaushan+Script|Vidaloka|Cardo:700|Zhi+Mang+Xing&display=swap");
 
 .fa-bars,
