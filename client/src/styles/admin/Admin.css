@@ -82,9 +82,6 @@
     margin: 0 0.5rem 0.5rem 0;
     font-size: 0.8rem;
   }
-  .adminLoginInput:last-of-type {
-    margin-bottom: 1rem;
-  }
   .adminSubmit {
     height: 2rem;
     font-size: 0.8rem;
