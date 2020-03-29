@@ -15,10 +15,13 @@ class UploadFile extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          onSubmit={this.handleSubmit}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
           <input
             type="text"
-            value="wklej link do zdjęcia"
+            placeholder="wklej link do zdjęcia"
             className="imageLinkInput"
             style={{
               width: "80vw",

@@ -19,11 +19,10 @@
 .uploadFormInsideWrap {
   display: flex;
 }
-.uploadInput,
-.uploadBrowseLabel {
+.uploadInput {
   margin: 1rem auto;
   padding: 1rem 2rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 0.9rem;
   letter-spacing: 0.1rem;
   background-color: #4e9b45;
@@ -31,12 +30,7 @@
   border: none;
   border-radius: 5px;
 }
-.uploadBrowseLabel {
-  height: auto;
-  background-color: royalblue;
-}
-.uploadInput:hover,
-.uploadBrowseLabel:hover {
+.uploadInput:hover {
   color: yellow;
   cursor: pointer;
 }
@@ -58,8 +52,7 @@
   color: #c81529;
 }
 @media (min-width: 1600px) {
-  .uploadInput,
-  .uploadBrowseLabel {
+  .uploadInput {
     font-size: 1.3rem;
     padding: 1rem 4rem;
   }
