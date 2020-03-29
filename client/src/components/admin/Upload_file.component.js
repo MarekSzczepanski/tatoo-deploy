@@ -27,7 +27,8 @@ class UploadFile extends React.Component {
               width: "80vw",
               height: "3rem",
               marginTop: "1.5rem",
-              fontSize: "1.3rem"
+              fontSize: "1.3rem",
+              textAlign: "center"
             }}
           ></input>
           <input
