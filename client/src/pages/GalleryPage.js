@@ -10,6 +10,7 @@ class GalleryPage extends React.Component {
   };
 
   componentDidMount() {
+    this.addListeners()
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
@@ -22,7 +23,7 @@ class GalleryPage extends React.Component {
         console.log(error);
       });
 
-    if (window.innerWidth > 1023) {
+   /*  if (window.innerWidth > 1023) {
       const images = document.querySelector(".galleryPageSection").childNodes;
       images.forEach(image => {
         image.addEventListener("click", this.handleImageClick);
@@ -31,8 +32,9 @@ class GalleryPage extends React.Component {
       const allImages = document.querySelectorAll(".galleryImg");
       allImages.forEach(image => {
         image.style.display = "none";
-      });
+      }); */
     }
+
   }
   handleImageClick = e => {
     const images = document.querySelectorAll("img");
@@ -74,6 +76,12 @@ class GalleryPage extends React.Component {
     });
     document.querySelector(".galleryPageSection").style.height = "auto";
     document.querySelector(".galleryPageX").style.display = "none";
+  };
+  addListeners = () => {
+    const images = document.querySelectorAll(".galleryImg");
+    images.forEach(image => {
+      image.addEventListener("click", this.handleImageClick);
+    });
   };
   changeImagesLinksInState = respo => {
     this.setState({
