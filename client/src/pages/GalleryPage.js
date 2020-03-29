@@ -36,7 +36,8 @@ class GalleryPage extends React.Component {
     } */
   }
   handleImageClick = e => {
-    const images = document.querySelectorAll("img");
+    console.log(e.target);
+    const images = document.querySelectorAll(".galleryImg");
     const xButton = document.querySelector(".galleryPageX");
     images.forEach(image => {
       image.style.display = "none";
