@@ -32,7 +32,7 @@ class UploadFile extends React.Component {
           <input type="file" className="uploadBrowseInput" id="customFile" />
           <input
             type="submit"
-            value="załaduj zdjęcie"
+            placeholder="załaduj zdjęcie"
             className="uploadInput"
           />
         </form>

@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Header from "./Header.component";
 import "../../styles/admin/Admin_dashboard.css";
-import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
 class DeleteNews extends React.Component {
   state = {
     title: "",
@@ -141,7 +140,6 @@ class DeleteNews extends React.Component {
           <div className="deleteNewsDateWrap">
             <div className="deleteNewsDate">{news.date}</div>
           </div>
-
           <div className="deleteNewsTitleWrap">
             <h2 className="deleteNewsTitle">{news.title}</h2>
           </div>

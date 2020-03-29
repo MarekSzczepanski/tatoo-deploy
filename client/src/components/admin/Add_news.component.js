@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Header from "./Header.component";
 import "../../styles/admin/Admin_dashboard.css";
-import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { faArrowAltCircleDown } from "@fortawesome/free-solid-svg-icons";
 class AddNews extends React.Component {
   resp;
   state = {
