@@ -12,7 +12,7 @@ class About extends React.Component {
         <section className="aboutSection">
           <img
             src={
-              "https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/75210655_546739839225817_391108432167436288_o.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=47pQTcFJnYYAX86c9oG&_nc_ht=scontent-waw1-1.xx&oh=ebf4003dacb1cf93dcdcf9fd13c64b5a&oe=5EA6BEE4"
+              "https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/p720x720/51290675_391945234705279_2602131972373348352_o.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=DsO-c1dq2WAAX937ktW&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=ef26788c1545d61bd0d98dec5aa11843&oe=5EA414D9"
             }
             className="aboutImg"
             alt="tatuaż-jeleń"
