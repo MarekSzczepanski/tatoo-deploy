@@ -69,6 +69,7 @@
   }
   .adminLoginForm {
     flex-direction: column;
+    align-items: center;
     width: 100%;
     padding-top: 3rem;
   }
@@ -78,12 +79,15 @@
   .adminLoginInput {
     width: 38%;
     height: 2rem;
-    margin-right: 0.5rem;
-    font-size: 0.7rem;
+    margin: 0 0.5rem 0.5rem 0;
+    font-size: 0.8rem;
+  }
+  .adminLoginInput:last-of-type {
+    margin-bottom: 1rem;
   }
   .adminSubmit {
     height: 2rem;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .adminSubmit a {
     line-height: 2rem;
