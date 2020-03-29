@@ -57,7 +57,7 @@ class About extends React.Component {
           <div className="aboutBottomInsideWrap">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="aboutIcon" />
             <p className="aboutBottomText">odwiedź nas</p>
-            <p className="aboutBottomText"> ul. czarnieckiego 5/10</p>
+            <p className="aboutBottomText"> ul. czarnieckiego 10/20</p>
             <p className="aboutBottomText">ostróda</p>
           </div>
           <div className="aboutBottomInsideWrap">
@@ -67,8 +67,8 @@ class About extends React.Component {
               id="phoneIcon"
             />
             <p className="aboutBottomText">umów się na wizytę</p>
-            <p className="aboutBottomText">+48 730 000 804</p>
-            <p className="aboutBottomText">zajawatattoo@gmail.com</p>
+            <p className="aboutBottomText">+48 730 000 000</p>
+            <p className="aboutBottomText">adres.emailowy@gmail.com</p>
           </div>
           <div className="aboutBottomInsideWrap">
             <FontAwesomeIcon

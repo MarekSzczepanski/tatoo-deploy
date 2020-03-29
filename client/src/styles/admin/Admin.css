@@ -22,7 +22,6 @@
 }
 .adminSubmit a {
   display: block;
-  line-height: 3rem;
   list-style-type: none;
   font-weight: bold;
   text-align: center;
@@ -69,6 +68,7 @@
     padding-top: 3rem;
   }
   .adminLoginForm {
+    flex-direction: column;
     width: 100%;
     padding-top: 3rem;
   }
@@ -84,6 +84,9 @@
   .adminSubmit {
     height: 2rem;
     font-size: 0.7rem;
+  }
+  .adminSubmit a {
+    line-height: 2rem;
   }
   #popupWrap {
     width: 70vw;
@@ -105,6 +108,9 @@
   .adminLoginH1 {
     font-size: 2.5rem;
   }
+  .adminLoginForm {
+    flex-direction: row;
+  }
   .adminLoginInput {
     font-size: 1.5rem;
     max-width: 20rem;
@@ -113,6 +119,9 @@
   .adminSubmit {
     font-size: 1.5rem;
     height: 3rem;
+  }
+  .adminSubmit a {
+    line-height: 3rem;
   }
 }
 @media (min-width: 800px) {
