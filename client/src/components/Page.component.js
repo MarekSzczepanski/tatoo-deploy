@@ -8,7 +8,6 @@ import AddNews from "../pages/admin/Add_news";
 import DeleteNews from "../pages/admin/Delete_news";
 import ManageImages from "../pages/admin/Manage_images";
 import ErrorPage from "../pages/Error_page";
-
 class Page extends React.Component {
   state = {
     auth: false

@@ -1,15 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import GalleryPageFooter from "../components/GalleryPageFooter.component";
-import { faWindowClose } from "@fortawesome/free-regular-svg-icons";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { faWindowClose } from "@fortawesome/free-regular-svg-icons";
 class GalleryPage extends React.Component {
   state = {
     imagesLinks: []
   };
-  listOfImages;
+
+  componentDidMount() {
+    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
+      this
+    );
+    axios
+      .get("/api/images_list")
+      .then(response => {
+        boundChangeImagesLinksInState(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+    if (window.innerWidth > 1023) {
+      const images = document.querySelector(".galleryPageSection").childNodes;
+      images.forEach(image => {
+        image.addEventListener("click", this.handleImageClick);
+      });
+    } else {
+      const allImages = document.querySelectorAll(".galleryImg");
+      allImages.forEach(image => {
+        image.style.display = "none";
+      });
+    }
+  }
   handleImageClick = e => {
     const images = document.querySelectorAll("img");
     const xButton = document.querySelector(".galleryPageX");
@@ -40,7 +64,6 @@ class GalleryPage extends React.Component {
   handleXButtonClick = () => {
     const images = document.querySelectorAll("img");
     const clickedImage = document.querySelector(".clickedImage");
-    console.log(clickedImage);
     clickedImage.style.width = "24.9vw";
     clickedImage.style.height = "24.9vw";
     clickedImage.style.position = "static";
@@ -52,33 +75,6 @@ class GalleryPage extends React.Component {
     document.querySelector(".galleryPageSection").style.height = "auto";
     document.querySelector(".galleryPageX").style.display = "none";
   };
-  componentWillMount() {}
-  componentDidMount() {
-    const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
-      this
-    );
-    axios
-      .get("/api/images_list")
-      .then(response => {
-        boundChangeImagesLinksInState(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-
-    if (window.innerWidth > 1023) {
-      const images = document.querySelector(".galleryPageSection").childNodes;
-      images.forEach(image => {
-        image.addEventListener("click", this.handleImageClick);
-      });
-    } else {
-      const allImages = document.querySelectorAll(".galleryImg");
-      allImages.forEach(image => {
-        image.style.display = "none";
-      });
-    }
-  }
-
   changeImagesLinksInState = respo => {
     this.setState({
       imagesLinks: respo.reverse()
@@ -108,15 +104,6 @@ class GalleryPage extends React.Component {
             className="galleryPageX"
             onClick={this.xClick}
           />
-          {/* {this.listOfImages.map((image, index) => (
-            <img
-              key={index}
-              className={"galleryImg"}
-              src={image}
-              id={"galleryImage" + index}
-              alt="info"
-            ></img>
-          ))} */}
           {renderImages}
         </section>
         <GalleryPageFooter />

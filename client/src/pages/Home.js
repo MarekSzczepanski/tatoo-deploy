@@ -1,75 +1,19 @@
 import React from "react";
-import axios from "axios";
-import gsap from "gsap";
-import { TweenLite } from "gsap";
 import Header from "../components/Header.component";
 import About from "../components/About.component";
 import News from "../components/News.component";
 import Gallery from "../components/Gallery.component";
 import Rules from "../components/Rules.component";
 import Footer from "../components/Footer.component";
+import gsap from "gsap";
+import { TweenLite } from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faAngleDoubleDown,
   faTimes
 } from "@fortawesome/free-solid-svg-icons";
-
 class Home extends React.Component {
-  /* componentWillMount() {
-    axios.post("/api/admin/auth", {
-      auth: false
-    });
-  } */
-  scrollToSection = e => {
-    document
-      .querySelector("." + e.target.id.slice(4).toLowerCase() + "Section")
-      .scrollIntoView({ behavior: "smooth" });
-  };
-
-  scrollArrowColorAnimation = color => {
-    const tl = gsap.timeline();
-    const scrollArrow = document.querySelector(".fa-angle-double-down");
-    tl.fromTo(
-      scrollArrow,
-      2,
-      { color: "white" },
-      { repeat: -1, yoyo: true, color: color }
-    );
-  };
-  handleBurgerClick = e => {
-    const burger = document.querySelector(".fa-bars");
-    const close = document.querySelector(".fa-times");
-    const menu = document.querySelector(".menu");
-    const menuBurger = document.querySelector(".menuBurger");
-    const menuItems = document.querySelectorAll(".menuItem");
-
-    console.log(e.target);
-    if (e.target === burger || e.target.parentNode === burger) {
-      burger.style.display = "none";
-      close.style.display = "block";
-      menu.classList.remove("menu");
-      menu.classList.add("menuBurger");
-      const menuBurgerWidth = document.querySelector(".menuBurger").offsetWidth;
-      close.style.left = menuBurgerWidth - 25 + "px";
-      menuItems.forEach(item => {
-        item.style.borderBottom = "solid 1px white";
-      });
-      document.getElementById("menuAbout").style.width = "70%";
-    } else {
-      burger.style.display = "block";
-      close.style.display = "none";
-      menuBurger.classList.add("menu");
-      menuBurger.classList.remove("menuBurger");
-      menuItems.forEach(item => {
-        item.style.borderStyle = "none";
-      });
-      document.getElementById("menuAbout").style.width = "auto";
-      if (window.innerWidth > 1023) {
-        burger.style.display = "none";
-      }
-    }
-  };
   componentDidMount() {
     const menuItems = document.querySelectorAll(".menuItem");
     const scrollArrow = document.querySelector(".fa-angle-double-down");
@@ -87,7 +31,6 @@ class Home extends React.Component {
       ) {
         this.scrollArrowColorAnimation("#FBFE5D");
         currentColor = "#FBFE5D";
-        console.log(currentColor);
       }
 
       if (
@@ -99,7 +42,6 @@ class Home extends React.Component {
       ) {
         this.scrollArrowColorAnimation("#E95252");
         currentColor = "#E95252";
-        console.log(currentColor);
       }
 
       if (
@@ -132,6 +74,57 @@ class Home extends React.Component {
       item.addEventListener("click", this.scrollToSection);
     });
   }
+
+  scrollToSection = e => {
+    document
+      .querySelector("." + e.target.id.slice(4).toLowerCase() + "Section")
+      .scrollIntoView({ behavior: "smooth" });
+  };
+
+  scrollArrowColorAnimation = color => {
+    const tl = gsap.timeline();
+    const scrollArrow = document.querySelector(".fa-angle-double-down");
+    tl.fromTo(
+      scrollArrow,
+      2,
+      { color: "white" },
+      { repeat: -1, yoyo: true, color: color }
+    );
+  };
+
+  handleBurgerClick = e => {
+    const burger = document.querySelector(".fa-bars");
+    const close = document.querySelector(".fa-times");
+    const menu = document.querySelector(".menu");
+    const menuBurger = document.querySelector(".menuBurger");
+    const menuItems = document.querySelectorAll(".menuItem");
+
+    if (e.target === burger || e.target.parentNode === burger) {
+      burger.style.display = "none";
+      close.style.display = "block";
+      menu.classList.remove("menu");
+      menu.classList.add("menuBurger");
+      const menuBurgerWidth = document.querySelector(".menuBurger").offsetWidth;
+      close.style.left = menuBurgerWidth - 25 + "px";
+      menuItems.forEach(item => {
+        item.style.borderBottom = "solid 1px white";
+      });
+      document.getElementById("menuAbout").style.width = "70%";
+    } else {
+      burger.style.display = "block";
+      close.style.display = "none";
+      menuBurger.classList.add("menu");
+      menuBurger.classList.remove("menuBurger");
+      menuItems.forEach(item => {
+        item.style.borderStyle = "none";
+      });
+      document.getElementById("menuAbout").style.width = "auto";
+      if (window.innerWidth > 1023) {
+        burger.style.display = "none";
+      }
+    }
+  };
+
   render() {
     return (
       <>

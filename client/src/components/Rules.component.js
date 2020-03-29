@@ -1,18 +1,23 @@
 import React from "react";
-import gsap from "gsap";
 import "../styles/styles.scss";
+import gsap from "gsap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faComment,
   faBiohazard,
   faDonate,
   faFillDrip
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 class Rules extends React.Component {
   state = {
     wasAnimation: false
   };
+  componentDidMount() {
+    window.addEventListener("scroll", this.toggleShadowAnimation);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.toggleShadowAnimation);
+  }
   shadowAnimationTemplate = (target, property, delay) => {
     const tl = gsap.timeline();
     tl.to(
@@ -69,12 +74,6 @@ class Rules extends React.Component {
       });
     }
   };
-  componentDidMount() {
-    window.addEventListener("scroll", this.toggleShadowAnimation);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.toggleShadowAnimation);
-  }
   render() {
     return (
       <section className="rulesSection">

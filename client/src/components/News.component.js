@@ -1,31 +1,11 @@
 import React from "react";
+import "../styles/styles.scss";
 import axios from "axios";
 import { TweenLite } from "gsap";
-import "../styles/styles.scss";
-
 class News extends React.Component {
   resp;
   state = {
     newsList: []
-  };
-
-  showNewsByScrolling = () => {
-    const heading = document.querySelector(".newsH2");
-    const news = document.querySelectorAll(".homeNewsWrap");
-    if (window.pageYOffset > heading.offsetTop - 300) {
-      TweenLite.to(heading, {
-        x: 0,
-        duration: 0.8
-      });
-    }
-    for (let i = 0; i < news.length; i++) {
-      if (window.pageYOffset > news[i].offsetTop - 200) {
-        TweenLite.to(news[i], {
-          duration: 1.1,
-          css: { scaleX: 1, scaleY: 1 }
-        });
-      }
-    }
   };
   componentDidMount() {
     axios
@@ -51,6 +31,24 @@ class News extends React.Component {
   componentWillUnmount() {
     window.removeEventListener("scroll", this.showNewsByScrolling);
   }
+  showNewsByScrolling = () => {
+    const heading = document.querySelector(".newsH2");
+    const news = document.querySelectorAll(".homeNewsWrap");
+    if (window.pageYOffset > heading.offsetTop - 300) {
+      TweenLite.to(heading, {
+        x: 0,
+        duration: 0.8
+      });
+    }
+    for (let i = 0; i < news.length; i++) {
+      if (window.pageYOffset > news[i].offsetTop - 200) {
+        TweenLite.to(news[i], {
+          duration: 1.1,
+          css: { scaleX: 1, scaleY: 1 }
+        });
+      }
+    }
+  };
   render() {
     const renderNews = this.state.newsList.map(function(news, i) {
       return (

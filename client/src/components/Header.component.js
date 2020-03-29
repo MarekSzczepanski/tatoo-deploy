@@ -1,8 +1,7 @@
 import React from "react";
+import "../styles/styles.scss";
 import gsap from "gsap";
 import { TweenLite } from "gsap";
-import "../styles/styles.scss";
-
 class Header extends React.Component {
   headerText = null;
   allStars = [];

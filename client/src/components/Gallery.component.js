@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/styles.scss";
 import axios from "axios";
 import gsap from "gsap";
-import "../styles/styles.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 class Gallery extends React.Component {
-  resp;
   state = {
     imagesDisplayed: [],
     allImages: [],
@@ -33,7 +31,6 @@ class Gallery extends React.Component {
     }
   }
   componentDidUpdate() {
-    console.log("update");
     const leftChevron = document.querySelector(".galleryChevronLeft");
     const rightChevron = document.querySelector(".galleryChevronRight");
     leftChevron.style.opacity = 1;
@@ -86,7 +83,6 @@ class Gallery extends React.Component {
         i < this.state.imagesDisplayed.length;
         i++
       ) {
-        console.log("rrR", "galleryImage" + this.state.imagesDisplayed[i]);
         document
           .getElementById("galleryImage" + this.state.imagesDisplayed[i])
           .classList.add("visible");
@@ -98,7 +94,6 @@ class Gallery extends React.Component {
   }
   displayImages = imagesToDisplay => {
     const allImages = document.querySelectorAll(".galleryImg");
-    console.log("allimages", allImages);
     const allImagesIds = [];
     allImages.forEach(image => {
       allImagesIds.push(image.id.slice(12));
@@ -106,11 +101,6 @@ class Gallery extends React.Component {
     this.setState({
       allImages: allImagesIds,
       imagesDisplayed: imagesToDisplay
-    });
-  };
-  changeImagesLinksInState = respo => {
-    this.setState({
-      imagesLinks: respo.reverse()
     });
   };
   handleChevronClick = e => {
@@ -178,6 +168,11 @@ class Gallery extends React.Component {
           .classList.add("visible");
       }
     }
+  };
+  changeImagesLinksInState = respo => {
+    this.setState({
+      imagesLinks: respo.reverse()
+    });
   };
   render() {
     if (this.state.imagesLinks[1] && !this.state.allImages[1]) {

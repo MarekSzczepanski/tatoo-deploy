@@ -26,7 +26,7 @@ class App extends React.Component {
     });
   };
   handleSubmit = e => {
-    const boundThis = this.changeThis.bind(this);
+    const boundChangeAuth = this.changeAuth.bind(this);
     if (e) {
       e.preventDefault();
     }
@@ -38,7 +38,7 @@ class App extends React.Component {
       .post("/api/admin/login", user)
       .then(function(response) {
         if (response.data === "ok") {
-          boundThis();
+          boundChangeAuth();
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");
           popupHiddenClass.forEach(item => {
@@ -56,7 +56,7 @@ class App extends React.Component {
       isErrorHidden: true
     });
   };
-  changeThis = () => {
+  changeAuth = () => {
     this.setState({
       auth: true
     });
