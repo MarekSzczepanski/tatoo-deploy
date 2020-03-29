@@ -27,12 +27,9 @@ class UploadFile extends React.Component {
               fontSize: "1.3rem"
             }}
           ></input>
-        </form>
-        <form className="uploadForm">
-          <input type="file" className="uploadBrowseInput" id="customFile" />
           <input
             type="submit"
-            placeholder="załaduj zdjęcie"
+            value="załaduj zdjęcie"
             className="uploadInput"
           />
         </form>
