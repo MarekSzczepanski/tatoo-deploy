@@ -78,6 +78,7 @@ class GalleryPage extends React.Component {
     document.querySelector(".galleryPageX").style.display = "none";
   };
   addListeners = () => {
+    console.log(5);
     const images = document.querySelector(".galleryPageSection").childNodes;
     images.forEach(image => {
       image.addEventListener("click", this.handleImageClick);
