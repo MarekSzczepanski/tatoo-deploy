@@ -21,6 +21,7 @@
   width: 10rem;
 }
 .adminSubmit a {
+  display: block;
   line-height: 3rem;
   list-style-type: none;
   font-weight: bold;

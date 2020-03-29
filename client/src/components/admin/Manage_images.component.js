@@ -54,16 +54,13 @@ class ManageImages extends React.Component {
   addListeners = () => {
     const images = document.querySelectorAll(".galleryImg");
     const boundDelete = this.deleteImage.bind(this);
-    console.log("images", images);
     images.forEach(image => {
-      console.log("im", image);
       image.addEventListener("click", boundDelete);
     });
   };
-  changeImagesLinksInState = respo => {
-    console.log("respo", respo);
+  changeImagesLinksInState = response => {
     this.setState({
-      imagesLinks: respo.reverse(),
+      imagesLinks: response.reverse(),
       rerender: false
     });
   };
