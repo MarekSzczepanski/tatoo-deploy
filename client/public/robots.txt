@@ -1,0 +1,9 @@
+User-agent: *
+
+Disallow:
+
+<head>
+
+<meta name=”robots” content="nofollow”>
+
+</head>
