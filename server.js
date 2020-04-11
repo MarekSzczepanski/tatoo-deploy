@@ -47,7 +47,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(compression());
 
 // server-sent event stream
-app.get("/events", function (req, res) {
+app.get("*", function (req, res) {
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
 
