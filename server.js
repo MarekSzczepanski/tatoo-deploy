@@ -6,6 +6,7 @@ const fileUpload = require("express-fileupload");
 const app = express();
 var compression = require("compression");
 
+app.use(compression());
 app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
@@ -42,27 +43,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
-// compress responses
-app.use(compression());
-
-// server-sent event stream
-app.get("*", function (req, res) {
-  res.setHeader("Content-Type", "text/event-stream");
-  res.setHeader("Cache-Control", "no-cache");
-
-  // send a ping approx every 2 seconds
-  var timer = setInterval(function () {
-    res.write("data: ping\n\n");
-
-    // !!! this is the important part
-    res.flush();
-  }, 2000);
-
-  res.on("close", function () {
-    clearInterval(timer);
-  });
-});
 
 const port = process.env.PORT || 5000;
 
