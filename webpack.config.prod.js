@@ -1,4 +1,4 @@
-var webpack = require("webpack");
+/* var webpack = require("webpack");
 var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
@@ -21,3 +21,4 @@ module.exports = {
     }),
   ],
 };
+ */
