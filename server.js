@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const config = require("config");
 const fileUpload = require("express-fileupload");
 const app = express();
+var compression = require("compression");
 
 app.use(cors());
 app.use(express.json());
@@ -16,10 +17,10 @@ mongoose
   .connect(db, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   }) // Adding new mongo url parser
   .then(() => console.log("MongoDB Connected..."))
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 const homeRouter = require("./routes/api/home.route");
 const adminRouter = require("./routes/api/admin.route");
@@ -41,6 +42,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+app.use(compression());
 
 const port = process.env.PORT || 5000;
 
