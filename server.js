@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const config = require("config");
 const fileUpload = require("express-fileupload");
 const app = express();
-var compression = require("compression");
+const compression = require("compression");
 
 app.use(compression());
 app.use(cors());
