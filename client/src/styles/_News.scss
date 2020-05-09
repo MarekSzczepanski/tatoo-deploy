@@ -1,13 +1,13 @@
 .newsMainWrap {
   display: flex;
-  background-color: $darkYellow;
+  background-color: $darkGray;
   padding-bottom: 1rem;
 }
 .newsSection {
   width: 98vw;
   margin-left: 1vw;
   padding-bottom: 1rem;
-  background-color: $darkYellow;
+  background-color: $darkGray;
 }
 .newsH2 {
   margin: 0 auto;
@@ -18,11 +18,11 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: $darkGentleRed;
+  color: $yellow;
 }
 .newsWrap {
   margin: 0 auto;
-  background-color: $darkYellow;
+  background-color: $darkGray;
   border-radius: 40px;
 }
 .homeNewsWrap {
@@ -36,17 +36,18 @@
 .homeNewsTitle {
   display: flex;
   width: 100%;
-  background-color: $darkGentleRed;
-  font-weight: 700;
+  border: solid 1px $yellow;
+  /* font-weight: 700; */
   text-align: center;
   border-radius: 40px 40px 0 0;
+  background-color: $darkGray;
 }
 .homeNewsTitleTitle {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 2px solid $darkYellow;
-  color: $newsYellow;
+  border-right: 1px solid $yellow;
+  color: #eee;
 }
 .homeNewsTitleDate {
   display: flex;
@@ -54,16 +55,16 @@
   align-items: center;
   width: 20%;
   padding: 1rem 0;
-  color: $newsYellow;
+  color: $yellow;
 }
 .homeNewsText {
-  background-color: $newsYellow;
+  background-color: $darkGray;
   border-top: none;
   border-radius: 0 0 40px 40px;
 }
 .homeNewsTextText {
   padding: 1rem;
-  color: #ea5757;
+  color: $yellow;
 }
 .newsSideLine {
   display: flex;
@@ -82,8 +83,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   white-space: nowrap;
-  color: $darkGentleRed;
-  background-color: $darkYellow;
+  color: $yellow;
+  background-color: $darkGray;
 }
 .newsSideLineLock {
   width: 100vw;
@@ -119,7 +120,7 @@
     font-size: 0.8rem;
   }
   .homeNewsText {
-    border: solid 1px $darkGentleRed;
+    border: solid 1px $yellow;
     border-top: none;
   }
   .newsSideLineText {
@@ -144,7 +145,7 @@
     width: 20%;
   }
   .homeNewsText {
-    border: solid 2px $darkGentleRed;
+    border: solid 1px $yellow;
     border-top: none;
   }
   .newsSideLineText {
@@ -167,11 +168,6 @@
   }
   .homeNewsTitleDate {
     width: 15%;
-  }
-}
-@media (min-width: 1024px) {
-  .newsMainWrap {
-    border-bottom: solid 2rem $darkYellow;
   }
 }
 @media (min-width: 1301px) {

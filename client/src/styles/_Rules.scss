@@ -1,5 +1,5 @@
 .rulesSection {
-  background-color: #000;
+  background-color: $darkGray;
 }
 .rulesWrap {
   display: flex;
@@ -12,35 +12,22 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: solid 2px white;
+  border: solid 2px $yellow;
   border-radius: 40px;
-  background-color: black;
+  background-color: $darkGray;
+  color: $yellow;
+  -webkit-box-shadow: 0px 41px 68px -41px $yellow;
+  -moz-box-shadow: 0px 41px 68px -41px $yellow;
+  box-shadow: 0px 41px 68px -41px $yellow;
+}
+#rule1, #rule3 {
+  border-color: white;
   color: white;
-  -webkit-box-shadow: 0px 41px 68px -41px rgba(255, 255, 255, 0);
-  -moz-box-shadow: 0px 41px 68px -41px rgba(255, 255, 255, 0);
-  box-shadow: 0px 41px 68px -41px rgba(255, 255, 255, 0);
+  -webkit-box-shadow: 0px 41px 68px -41px white;
+  -moz-box-shadow: 0px 41px 68px -41px white;
+  box-shadow: 0px 41px 68px -41px white;
 }
-#rule1 {
-  border-color: $gentleRed;
-  color: $gentleRed;
-  -webkit-box-shadow: 0px 41px 68px -41px rgba(254, 96, 96, 0);
-  -moz-box-shadow: 0px 41px 68px -41px rgba(254, 96, 96, 0);
-  box-shadow: 0px 41px 68px -41px rgba(254, 96, 96, 0);
-}
-#rule2 {
-  border-color: #ebe000;
-  color: #ebe000;
-  -webkit-box-shadow: 0px 41px 68px -41px rgba(235, 224, 0, 0);
-  -moz-box-shadow: 0px 41px 68px -41px rgba(235, 224, 0, 0);
-  box-shadow: 0px 41px 68px -41px rgba(235, 224, 0, 0);
-}
-#rule3 {
-  border-color: $mint;
-  color: $mint;
-  -webkit-box-shadow: 0px 41px 68px -41px rgba(51, 195, 108, 0);
-  -moz-box-shadow: 0px 41px 68px -41px rgba(51, 195, 108, 0);
-  box-shadow: 0px 41px 68px -41px rgba(51, 195, 108, 0);
-}
+
 @media (min-width: 320px) {
   .rulesWrap {
     flex-direction: column;

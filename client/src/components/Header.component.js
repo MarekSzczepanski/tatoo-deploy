@@ -25,7 +25,7 @@ class Header extends React.Component {
       duration: 1,
       delay: 1,
       ease: "linear",
-      color: "#fefb90"
+      color: "#A92CA6"
     });
     tl.to(this.allStars, {
       delay: 1,
@@ -41,13 +41,12 @@ class Header extends React.Component {
     return (
       <>
         <header className="header">
-          <h3 className="artistName">Marta Iszoro-Panawo</h3>
+          <h3 className="artistName">Jan Kowalski</h3>
           <div className="headerWrap">
             <h2 className="headerH2">tatoo</h2>
-            <h1 className="headerH1">dlaczego nie?</h1>
+            <h1 className="headerH1">epic vision</h1>
             <p className="headerText">
-              Wpadnij do lokalu, przedstaw nam swój pomysł, a my postaramy się
-              jak najlepiej go zrealizować.
+              U nas przemienisz swój pomysł w wymarzony tatuaż.
             </p>
             <div className="starWrap">
               <p id="0" className="star">

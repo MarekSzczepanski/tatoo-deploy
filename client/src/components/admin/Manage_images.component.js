@@ -38,8 +38,8 @@ class ManageImages extends React.Component {
       imageToDelete: e.target.id
     });
     document.querySelector(".popupRootImages").style.display = "block";
-    e.target.style.border = "7px solid #e95252";
-    e.target.style.backgroundColor = "#e95252";
+    e.target.style.border = "7px solid #FED230";
+    e.target.style.backgroundColor = "#FED230";
     e.target.classList.add("redBorder");
   };
   confirmDeletion = () => {

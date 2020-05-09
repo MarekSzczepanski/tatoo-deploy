@@ -19,7 +19,7 @@ class Gallery extends React.Component {
       this
     );
     axios
-      .get("/api/images_list")
+      .get("http://localhost:5000/api/images_list")
       .then(response => {
         boundChangeImagesLinksInState(response.data);
       })

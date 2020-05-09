@@ -1,12 +1,9 @@
 .gallerySection {
   width: 100vw;
+  padding-top: 3rem;
   position: relative;
-  background-color: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(254, 249, 98, 1) 100%
-  );
+  /* background: rgb(28,27,27); */
+  background: linear-gradient(0deg, rgba(28,27,27,1) 0%, rgba(70,37,69,1) 50%, rgba(28,27,27,1) 100%);
 }
 .imagesWrap {
   display: flex;
@@ -25,12 +22,12 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   white-space: nowrap;
-  background-color: $newsYellow;
-  box-shadow: 0 0 0 3px black, 0 0 0 7px $newsYellow;
+  background-color: $yellow;
+  box-shadow: 0 0 0 3px black, 0 0 0 7px $yellow;
   opacity: 0.9;
   transition: 0.5s;
   &:hover {
-    box-shadow: 0 0 0 4px black, 0 0 0 9px $newsYellow;
+    box-shadow: 0 0 0 4px black, 0 0 0 9px $yellow;
     opacity: 1;
   }
   & a {
@@ -126,23 +123,24 @@
   .imagesWrap {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 19.7vw;
     padding-right: 1.1vw;
+    padding-top: 2rem;
   }
   .imagesWrap .galleryImg {
     display: none;
     height: 100%;
-    width: 19.7vw;
+    width: 19.5vw;
   }
   .galleryChevronLeft,
   .galleryChevronRight {
     display: block;
     position: absolute;
     font-size: 3rem;
-    color: $darkMint;
+    color: $lightPurple;
     &:hover {
-      color: $paleMint;
+      color: white;
     }
   }
   .galleryChevronLeft {

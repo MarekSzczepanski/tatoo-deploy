@@ -51,22 +51,22 @@ class Rules extends React.Component {
     ) {
       this.shadowAnimation(
         "rule1",
-        "0px 41px 68px -41px rgba(254, 96, 96, 1)",
+        "0px 41px 68px -41px white",
         "0px 41px 68px -41px rgba(254, 96, 96, 0)"
       );
       this.shadowAnimation(
         "rule2",
-        "0px 41px 68px -41px rgba(235, 224, 0, 1)",
+        "0px 41px 68px -41px #FED230",
         "0px 41px 68px -41px rgba(235, 224, 0, 0)"
       );
       this.shadowAnimation(
         "rule3",
-        "0px 41px 68px -41px rgba(51, 195, 108, 1)",
+        "0px 41px 68px -41px white",
         "0px 41px 68px -41px rgba(51, 195, 108, 0)"
       );
       this.shadowAnimation(
         "rule4",
-        "0px 41px 68px -41px rgba(255, 255, 255, 1)",
+        "0px 41px 68px -41px #FED230",
         "0px 41px 68px -41px rgba(255, 255, 255, 0)"
       );
       this.setState({

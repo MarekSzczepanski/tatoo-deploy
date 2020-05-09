@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100vw;
   position: relative;
-  background-color: $mint;
+  background-color: $darkPurple;
 }
 .aboutH2 {
   margin: 0 auto;
@@ -13,7 +13,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: $gentleYellow;
+  color: $yellow;
 }
 .aboutUl {
   align-self: center;
@@ -27,7 +27,7 @@
   color: white;
 }
 .aboutLiSpan {
-  color: $gentleYellow;
+  color: $yellow;
 }
 .shine {
   height: 100%;
@@ -106,9 +106,9 @@
 }
 .aboutBottom {
   width: 100vw;
-  border-top: 1px solid $gentleYellow;
+  border-top: 1px solid $yellow;
   position: relative;
-  background-color: $darkMint;
+  background-color: $veryDarkPurple;
 }
 .aboutIcon {
   display: none;
@@ -122,12 +122,12 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: $paleYellow;
+  color: white;
 }
 .aboutBottomText:first-of-type {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  color: white;
+  color: $yellow;
 }
 @keyframes move {
   0% {
@@ -301,7 +301,7 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 2rem;
-    color: $darkGentleRed;
+    color: $yellow;
   }
   #phoneIcon {
     left: 0;
@@ -361,13 +361,13 @@
     letter-spacing: 2px;
     white-space: nowrap;
     color: white;
-    background-color: $darkGentleRed;
-    box-shadow: 0 0 0 3px white, 0 0 0 7px $darkGentleRed;
+    background-color: $darkGray;
+    box-shadow: 0 0 0 3px white, 0 0 0 7px $darkGray;
     opacity: 0.8;
     transition: 0.5s;
     z-index: 10;
     &:hover {
-      box-shadow: 0 0 0 4px white, 0 0 0 9px $darkGentleRed;
+      box-shadow: 0 0 0 4px white, 0 0 0 9px $darkGray;
       opacity: 1;
     }
     & a {
@@ -377,7 +377,7 @@
       text-decoration: none;
       color: white;
       &:hover {
-        color: $paleYellow;
+        color: $yellow;
       }
     }
   }
@@ -463,12 +463,12 @@
     width: 14rem;
     height: 3rem;
     font-size: 1.1rem;
-    box-shadow: 0 0 0 4px white, 0 0 0 9px $darkGentleRed;
+    box-shadow: 0 0 0 4px white, 0 0 0 9px $darkGray;
     & a {
       line-height: 3rem;
     }
     &:hover {
-      box-shadow: 0 0 0 7px white, 0 0 0 13px $darkGentleRed;
+      box-shadow: 0 0 0 5px white, 0 0 0 13px $darkGray;
     }
   }
   .aboutButton {

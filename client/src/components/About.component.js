@@ -4,6 +4,8 @@ import "../styles/styles.scss";
 import { faMapMarkerAlt, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Tatoo1 from "../img/tatoo1.jpg";
+import Tatoo2 from "../img/tatoo2.jpg";
 
 class About extends React.Component {
   render() {
@@ -12,17 +14,17 @@ class About extends React.Component {
         <section className="aboutSection">
           <img
             src={
-              "https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/p720x720/51290675_391945234705279_2602131972373348352_o.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=DsO-c1dq2WAAX937ktW&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=ef26788c1545d61bd0d98dec5aa11843&oe=5EA414D9"
+              Tatoo1
             }
             className="aboutImg"
-            alt="tatuaż-jeleń"
+            alt="tatoo-man"
           />
           <img
             src={
-              "https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/p960x960/80553491_574281119805022_5701494340124147712_o.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=IZmWvRQoqJoAX-8t6wN&_nc_ht=scontent-waw1-1.xx&_nc_tp=6&oh=b25958f2c0a31f1aa7494e8049abc38c&oe=5EA70E59"
+             Tatoo2
             }
             className="aboutImg"
-            alt="tatuaż-sztylet"
+            alt="tatoo-tiger"
             onMouseOver={this.handleMouseOver}
             onMouseOut={this.handleMouseOut}
           />

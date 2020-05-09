@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   position: relative;
   padding: 0.2rem 0 2rem;
-  background-color: $darkYellow;
+  background-color: $yellow;
 }
 .galleryPageSection .galleryImg {
   display: block;
@@ -13,7 +13,7 @@
 }
 .galleryPageButton {
   position: fixed;
-  border: 1px solid $gentleRed;
+  border: 1px solid $darkGray;
   top: 0.5rem;
   left: 0.5rem;
   background-color: black;
@@ -24,10 +24,10 @@
     text-decoration: none;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: $gentleRed;
+    color: $darkGray;
   }
   &:hover {
-    border: 2px solid $gentleRed;
+    border: 2px solid $darkGray;
   }
 }
 .galleryPageX {
@@ -36,7 +36,7 @@
   top: 1rem;
   right: 1rem;
   font-size: 2rem;
-  color: $gentleRed;
+  color: $darkGray;
   cursor: pointer;
   z-index: 2;
 }

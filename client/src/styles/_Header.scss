@@ -1,6 +1,6 @@
 .star {
   position: absolute;
-  color: $paleMint;
+  color: $lightPurple;
 }
 .star:first-of-type {
   left: 0;
@@ -40,13 +40,13 @@
 .header {
   width: 100vw;
   height: 100vh;
-  background-color: $gentleRed;
+  background-color: $darkGray;
 }
 .artistName {
   font-family: "Kaushan Script", cursive;
   text-align: right;
   letter-spacing: 0.1rem;
-  color: $paleYellow;
+  color: $yellow;
 }
 .headerWrap {
   display: flex;
@@ -58,13 +58,13 @@
   margin-left: 0.7rem;
   font-family: "Anton", sans-serif;
   text-transform: uppercase;
-  color: $paleYellow;
+  color: $yellow;
 }
 .headerH1 {
   margin-top: -1.3rem;
   font-family: "Zhi Mang Xing", cursive;
   white-space: nowrap;
-  color: $paleYellow;
+  color: $yellow;
 }
 .headerText {
   margin-top: 0.5rem;

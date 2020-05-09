@@ -21,36 +21,36 @@ class Home extends React.Component {
     const aboutBottom = document.querySelector(".aboutSection");
     const gallerySection = document.querySelector(".gallerySection");
     const rulesWrap = document.querySelector(".rulesWrap");
-    let currentColor = "#FBFE5D";
+    let currentColor = "#FED230";
 
-    this.scrollArrowColorAnimation("#FBFE5D");
+    this.scrollArrowColorAnimation("#FED230");
     window.addEventListener("scroll", () => {
       if (
         window.pageYOffset === header.offsetTop &&
-        currentColor !== "#FBFE5D"
+        currentColor !== "#FED230"
       ) {
-        this.scrollArrowColorAnimation("#FBFE5D");
-        currentColor = "#FBFE5D";
+        this.scrollArrowColorAnimation("#FED230");
+        currentColor = "#FED230";
       }
 
       if (
         (window.pageYOffset > header.offsetTop &&
           window.pageYOffset < aboutBottom.offsetTop &&
-          currentColor !== "#E95252") ||
+          currentColor !== "#FED230")/*  ||
         (window.pageYOffset > gallerySection.offsetTop - 500 &&
-          currentColor !== "#E95252")
+          currentColor !== "#FED230") */
       ) {
-        this.scrollArrowColorAnimation("#E95252");
-        currentColor = "#E95252";
+        this.scrollArrowColorAnimation("#FED230");
+        currentColor = "#FED230";
       }
 
       if (
         window.pageYOffset > aboutBottom.offsetTop &&
         window.pageYOffset < gallerySection.offsetTop - 500 &&
-        currentColor !== "#3FB96C"
+        currentColor !== "#A92CA6"
       ) {
-        this.scrollArrowColorAnimation("#3FB96C");
-        currentColor = "#3FB96C";
+        this.scrollArrowColorAnimation("#A92CA6");
+        currentColor = "#A92CA6";
       }
 
       if (window.pageYOffset > rulesWrap.offsetTop - 250) {

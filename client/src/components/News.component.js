@@ -9,7 +9,7 @@ class News extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("/api/news_list")
+      .get("http://localhost:5000/api/news_list")
       .then(response => {
         this.resp = response.data;
         this.setState({
