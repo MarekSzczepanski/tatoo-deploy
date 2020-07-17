@@ -5,18 +5,18 @@ import { TweenLite } from "gsap";
 class News extends React.Component {
   resp;
   state = {
-    newsList: []
+    newsList: [],
   };
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/news_list")
-      .then(response => {
+      .get("/api/news_list")
+      .then((response) => {
         this.resp = response.data;
         this.setState({
-          newsList: this.resp.reverse()
+          newsList: this.resp.reverse(),
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     if (window.innerWidth > 1300) {
@@ -36,20 +36,20 @@ class News extends React.Component {
     if (window.pageYOffset > heading.offsetTop - 300) {
       TweenLite.to(heading, {
         x: 0,
-        duration: 0.8
+        duration: 0.8,
       });
     }
     for (let i = 0; i < news.length; i++) {
       if (window.pageYOffset > news[i].offsetTop - 200) {
         TweenLite.to(news[i], {
           duration: 1.1,
-          css: { scaleX: 1, scaleY: 1 }
+          css: { scaleX: 1, scaleY: 1 },
         });
       }
     }
   };
   render() {
-    const renderNews = this.state.newsList.map(function(news, i) {
+    const renderNews = this.state.newsList.map(function (news, i) {
       return (
         <div className="homeNewsWrap" key={i}>
           <div className="homeNewsTitle">

@@ -6,24 +6,24 @@ import gsap from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 class Gallery extends React.Component {
   state = {
     imagesDisplayed: [],
     allImages: [],
-    imagesLinks: []
+    imagesLinks: [],
   };
   componentDidMount() {
     const boundChangeImagesLinksInState = this.changeImagesLinksInState.bind(
       this
     );
     axios
-      .get("http://localhost:5000/api/images_list")
-      .then(response => {
+      .get("/api/images_list")
+      .then((response) => {
         boundChangeImagesLinksInState(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
     if (window.innerWidth > 1300) {
@@ -49,7 +49,7 @@ class Gallery extends React.Component {
     }
     const imagesToDisplay = document.querySelectorAll(".visible");
     if (document.querySelector(".hiddenImageToDisplay")) {
-      imagesToDisplay.forEach(image => {
+      imagesToDisplay.forEach((image) => {
         image.classList.remove("visible");
         image.style.display = "none";
       });
@@ -57,7 +57,7 @@ class Gallery extends React.Component {
         ".hiddenImageToDisplay"
       );
       const tl = gsap.timeline();
-      hiddenImagesToDisplay.forEach(image => {
+      hiddenImagesToDisplay.forEach((image) => {
         image.style.display = "block";
         image.classList.add("visible");
       });
@@ -87,33 +87,33 @@ class Gallery extends React.Component {
           .getElementById("galleryImage" + this.state.imagesDisplayed[i])
           .classList.add("visible");
       }
-      imagesToDisplay.forEach(image => {
+      imagesToDisplay.forEach((image) => {
         image.style.display = "block";
       });
     }
   }
-  displayImages = imagesToDisplay => {
+  displayImages = (imagesToDisplay) => {
     const allImages = document.querySelectorAll(".galleryImg");
     const allImagesIds = [];
-    allImages.forEach(image => {
+    allImages.forEach((image) => {
       allImagesIds.push(image.id.slice(12));
     });
     this.setState({
       allImages: allImagesIds,
-      imagesDisplayed: imagesToDisplay
+      imagesDisplayed: imagesToDisplay,
     });
   };
-  handleChevronClick = e => {
+  handleChevronClick = (e) => {
     const hiddenImagesToDisplay = document.querySelectorAll(
       ".hiddenImageToDisplay"
     );
-    hiddenImagesToDisplay.forEach(image => {
+    hiddenImagesToDisplay.forEach((image) => {
       image.classList.remove("hiddenImageToDisplay");
     });
 
     const imagesToHide = document.querySelectorAll(".visible");
     const hiddenImages = [];
-    imagesToHide.forEach(image => {
+    imagesToHide.forEach((image) => {
       hiddenImages.push(Number(image.id.slice(12)));
     });
 
@@ -134,7 +134,7 @@ class Gallery extends React.Component {
           "galleryImage" + (Number(imagesToHide[4].id.slice(12)) + i)
         );
         this.setState({
-          eTarget: "right"
+          eTarget: "right",
         });
       } else if (
         (e.target.classList.contains("galleryChevronLeft") &&
@@ -146,7 +146,7 @@ class Gallery extends React.Component {
           "galleryImage" + (Number(imagesToHide[0].id.slice(12)) + -i)
         );
         this.setState({
-          eTarget: "left"
+          eTarget: "left",
         });
       }
       if (imageToDisplay) {
@@ -156,11 +156,11 @@ class Gallery extends React.Component {
     }
     if (imagesToDisplay.length) {
       this.setState({
-        imagesDisplayed: imagesToDisplay
+        imagesDisplayed: imagesToDisplay,
       });
     } else {
       this.setState({
-        imagesDisplayed: hiddenImages
+        imagesDisplayed: hiddenImages,
       });
       for (let i = 0; i < hiddenImages.length; i++) {
         document
@@ -169,9 +169,9 @@ class Gallery extends React.Component {
       }
     }
   };
-  changeImagesLinksInState = respo => {
+  changeImagesLinksInState = (respo) => {
     this.setState({
-      imagesLinks: respo.reverse()
+      imagesLinks: respo.reverse(),
     });
   };
   render() {
@@ -179,7 +179,7 @@ class Gallery extends React.Component {
       this.displayImages([0, 1, 2, 3, 4]);
     }
     const state = this.state;
-    const renderImages = this.state.imagesLinks.map(function(image, i) {
+    const renderImages = this.state.imagesLinks.map(function (image, i) {
       return (
         <img
           className="galleryImg"
