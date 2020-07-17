@@ -13,7 +13,7 @@
 }
 .galleryPageButton {
   position: fixed;
-  border: 1px solid $darkGray;
+  border: 1px solid $yellow;
   top: 0.5rem;
   left: 0.5rem;
   background-color: black;
@@ -24,10 +24,10 @@
     text-decoration: none;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: $darkGray;
+    color: $yellow;
   }
   &:hover {
-    border: 2px solid $darkGray;
+    border: 2px solid white;
   }
 }
 .galleryPageX {
