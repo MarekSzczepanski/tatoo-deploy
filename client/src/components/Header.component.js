@@ -16,7 +16,7 @@ class Header extends React.Component {
           x: 0,
           y: 0,
           delay: 1,
-          duration: 0.8
+          duration: 0.8,
         },
         0
       );
@@ -25,7 +25,7 @@ class Header extends React.Component {
       duration: 1,
       delay: 1,
       ease: "linear",
-      color: "#A92CA6"
+      color: "#A92CA6",
     });
     tl.to(this.allStars, {
       delay: 1,
@@ -33,7 +33,7 @@ class Header extends React.Component {
       repeat: -1,
       yoyo: true,
       ease: "Bounce.easeIn",
-      color: "white"
+      color: "white",
     });
     TweenLite.to(this.headerText, { delay: 1.5, duration: 2, opacity: 1 });
   }
@@ -41,10 +41,11 @@ class Header extends React.Component {
     return (
       <>
         <header className="header">
-          <h3 className="artistName">Jan Kowalski</h3>
+          <h3 className="artistName">M. Jarmoluk</h3>
           <div className="headerWrap">
-            <h2 className="headerH2">tatoo</h2>
-            <h1 className="headerH1">epic vision</h1>
+            <h2 className="headerH2">Golden Rose</h2>
+            <h1 className="headerH1">tatoo</h1>
+
             <p className="headerText">
               U nas przemienisz swój pomysł w wymarzony tatuaż.
             </p>
