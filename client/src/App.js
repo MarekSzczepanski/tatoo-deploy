@@ -8,57 +8,58 @@ class App extends React.Component {
     auth: false,
     username: "",
     password: "",
-    isErrorHidden: false
+    isErrorHidden: false,
   };
   componentDidUpdate() {
     if (this.state.isErrorHidden) {
       document.getElementById("popupRoot").classList.add("popupHidden");
     }
   }
-  handleUsernameChange = e => {
+  handleUsernameChange = (e) => {
     this.setState({
-      username: e.target.value
+      username: e.target.value,
     });
   };
-  handlePasswordChange = e => {
+  handlePasswordChange = (e) => {
     this.setState({
-      password: e.target.value
+      password: e.target.value,
     });
   };
-  handleSubmit = e => {
+  handleSubmit = (e) => {
+    document.querySelector(".adminLoginForm").submit();
     const boundChangeAuth = this.changeAuth.bind(this);
     if (e) {
       e.preventDefault();
     }
     const user = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
     };
     axios
       .post("/api/admin/login", user)
-      .then(function(response) {
+      .then(function (response) {
         if (response.data === "ok") {
           boundChangeAuth();
         } else {
           const popupHiddenClass = document.querySelectorAll(".popupHidden");
-          popupHiddenClass.forEach(item => {
+          popupHiddenClass.forEach((item) => {
             item.classList.remove("popupHidden");
           });
         }
       })
-      .catch(function(error) {
+      .catch(function (error) {
         window.location = "/#/admin";
         console.log(error);
       });
   };
-  handleErrorButtonClick = e => {
+  handleErrorButtonClick = (e) => {
     this.setState({
-      isErrorHidden: true
+      isErrorHidden: true,
     });
   };
   changeAuth = () => {
     this.setState({
-      auth: true
+      auth: true,
     });
   };
   render() {
@@ -92,9 +93,15 @@ class App extends React.Component {
                 className="adminLoginInput"
               ></input>
               <ul>
-                <li onClick={this.handleSubmit} className="adminSubmit">
+                <button
+                  onClick={this.handleSubmit}
+                  data-sitekey="6LfqqNIZAAAAAPZ-TkC9tHLuBtAc9I8YzSG1D4Hg"
+                  data-callback="onSubmit"
+                  data-action="submit"
+                  className="adminSubmit g-recaptcha"
+                >
                   <Link to="/admin_dashboard">zatwierdź</Link>
-                </li>
+                </button>
               </ul>
             </form>
           </div>
