@@ -20,8 +20,23 @@
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function onSubmit(token) {
+        document.getElementById("hehe").submit();
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <form id="hehe">
+      <button
+        class="g-recaptcha"
+        data-sitekey="6LfqqNIZAAAAAPZ-TkC9tHLuBtAc9I8YzSG1D4Hg"
+        data-callback="onSubmit"
+        data-action="submit"
+      >
+        Submit
+      </button>
+    </form>
   </body>
 </html>
