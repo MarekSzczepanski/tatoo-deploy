@@ -25,13 +25,8 @@ class App extends React.Component {
       password: e.target.value,
     });
   };
-  onSubmit = (token) => {
-    document.querySelector(".adminLoginForm").submit();
-    console.log(token);
-    this.handleSubmit();
-  };
-
   handleSubmit = (e) => {
+    zz;
     const boundChangeAuth = this.changeAuth.bind(this);
     if (e) {
       e.preventDefault();
@@ -98,15 +93,9 @@ class App extends React.Component {
                 className="adminLoginInput"
               ></input>
               <ul>
-                <button
-                  onClick={this.onSubmit}
-                  data-sitekey="6LfqqNIZAAAAAPZ-TkC9tHLuBtAc9I8YzSG1D4Hg"
-                  data-callback="onSubmit"
-                  data-action="submit"
-                  className="adminSubmit g-recaptcha"
-                >
+                <li onClick={this.handleSubmit} className="adminSubmit">
                   <Link to="/admin_dashboard">zatwierdź</Link>
-                </button>
+                </li>
               </ul>
             </form>
           </div>
