@@ -25,8 +25,13 @@ class App extends React.Component {
       password: e.target.value,
     });
   };
-  handleSubmit = (e) => {
+  onSubmit = (token) => {
     document.querySelector(".adminLoginForm").submit();
+    console.log(token);
+    this.handleSubmit();
+  };
+
+  handleSubmit = (e) => {
     const boundChangeAuth = this.changeAuth.bind(this);
     if (e) {
       e.preventDefault();
@@ -94,7 +99,7 @@ class App extends React.Component {
               ></input>
               <ul>
                 <button
-                  onClick={this.handleSubmit}
+                  onClick={this.onSubmit}
                   data-sitekey="6LfqqNIZAAAAAPZ-TkC9tHLuBtAc9I8YzSG1D4Hg"
                   data-callback="onSubmit"
                   data-action="submit"
