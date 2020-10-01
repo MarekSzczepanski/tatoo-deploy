@@ -26,7 +26,6 @@ class App extends React.Component {
     });
   };
   handleSubmit = (e) => {
-    zz;
     const boundChangeAuth = this.changeAuth.bind(this);
     if (e) {
       e.preventDefault();
